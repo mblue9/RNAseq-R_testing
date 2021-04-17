@@ -1,0 +1,26 @@
+url: https://mblue9.github.io/RNAseq-R/
+
+template:
+  params:
+    bootswatch: flatly
+    ganalytics: UA-93043521-1
+
+home:
+  title: "RNA-seq analysis in R"
+  
+toc:
+  depth: 4
+  
+navbar:
+  title: ~
+  type: default
+  left:
+    - text: Workshop
+      href: articles/06-rnaseq-day1.html
+
+  right:
+   - icon: fab fa-github
+     href: https://github.com/mblue9/RNAseq-R/
+   - icon: fab fa-docker
+     href: https://hub.docker.com/repository/docker/mblue9/RNAseq-R/
+    

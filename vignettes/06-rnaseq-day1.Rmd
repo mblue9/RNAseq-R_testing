@@ -1,5 +1,6 @@
 ---
 title: "RNA-seq analysis in R"
+author: "Maria A Doyle, Harriet Dashnow, Jovana Maksimovic, Anna S Trigos, Shian Su, Charity W Law, Matthew E Ritchie, Belinda Phipson"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
   html_document:
@@ -9,36 +10,38 @@ output:
 minutes: 300
 layout: page
 subtitle: Differential expression analysis
-bibliography: ref.bib
 ---
 
-**Authors: Belinda Phipson, Anna Trigos, Matt Ritchie, Shian Su, Maria Doyle, Harriet Dashnow, Charity Law**
+```{r, include=FALSE}
+# Set working directory to project root
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+```
 
 ```{r, include=FALSE}
-source("tools/chunk-options.R")
-opts_chunk$set(fig.path = "fig-06/")
+#source("tools/chunk-options.R")
+#opts_chunk$set(fig.path = "fig-06/")
 #knitr::opts_chunk$set(dev="tiff", dpi=300)
 ```
 
 # Data files and Resources
 
-Data files are available from: [https://figshare.com/s/1d788fd384d33e913a2a](https://figshare.com/s/1d788fd384d33e913a2a).
-You should download the files listed below and place them into a folder called `data` in your working directory.
+The RNA-Seq data files used is this workshop are available from [Figshare](https://figshare.com/s/1d788fd384d33e913a2a). They were originally obtained from [GSE60450](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). 
+You should download the 5 files from the links below and place them into a folder called `data` in your working directory.
 
 Data files:
 
-* GSE60450_Lactation-GenewiseCounts.txt
-* SampleInfo.txt
-* SampleInfo_Corrected.txt
+* [GSE60450_Lactation-GenewiseCounts.txt](https://ndownloader.figshare.com/files/5057929?private_link=1d788fd384d33e913a2a)
+* [SampleInfo.txt](https://ndownloader.figshare.com/files/5999829?private_link=1d788fd384d33e913a2a)
+* [SampleInfo_Corrected.txt](https://ndownloader.figshare.com/files/5999832?private_link=1d788fd384d33e913a2a)
+* [Mm.c2.all.v7.1.entrez.rds](http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.c2.all.v7.1.entrez.rds)  
+* [Mm.h.all.v7.1.entrez.rds](http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.h.all.v7.1.entrez.rds)
 
-Data files were originally obtained from:  
-ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE60nnn/GSE60450/suppl/GSE60450_Lactation-GenewiseCounts.txt.gz  
-http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.c2.all.v7.1.entrez.rds  
-http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.h.all.v7.1.entrez.rds
+# Acknowledgements
 
 This material has been inspired by the following resources:  
-http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf [@Lun2016]  
-http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html
+[It’s DE-licious:
+a recipe for differential expression analyses of RNA-seq
+experiments using quasi-likelihood methods in edgeR](http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf) [@Lun2016]  [RNAseq data analysis in R](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html)
 
 
 # Bioconductor/R Packages
@@ -60,7 +63,7 @@ To install the packages you can:
 ```{r, eval=FALSE}
 if (!requireNamespace("BiocManager"))
     install.packages("BiocManager")
-BiocManager::install(c("limma", "edgeR", "Glimma", "org.Mm.eg.db", "gplots", "RColorBrewer", "NMF", "BiasedUrn"))
+BiocManager::install(c("limma", "edgeR", "Glimma", "org.Mm.eg.db", "gplots", "RColorBrewer", "NMF"))
 ```
 
 # Overview
@@ -96,7 +99,7 @@ library(NMF)
 
 ## Mouse mammary gland dataset
 
-The data for this tutorial comes from a Nature Cell Biology paper, [*EGF-mediated induction of Mcl-1 at the switch to lactation is essential for alveolar cell survival*](http://www.ncbi.nlm.nih.gov/pubmed/25730472) [@Fu2015]. Both the raw data (sequence reads) and processed data (counts) can be downloaded from Gene Expression Omnibus database (GEO) under accession number [GSE60450](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450).
+The data for this tutorial comes from a Nature Cell Biology paper, EGF-mediated induction of Mcl-1 at the switch to lactation is essential for alveolar cell survival* [@Fu2015](http://www.ncbi.nlm.nih.gov/pubmed/25730472). Both the raw data (sequence reads) and processed data (counts) can be downloaded from Gene Expression Omnibus database (GEO) under accession number [GSE60450](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450).
 
 This study examines the expression profiles of basal stem-cell enriched cells (B) and committed luminal cells (L) in the mammary gland of virgin, pregnant and lactating mice. Six groups are present, with one for each combination of cell type and mouse status. Each group contains two biological replicates.
 We will first use the counts file as a starting point for our analysis. This data has already been aligned to the mouse genome. The command line tool featureCounts [@Liao2014] was used to count reads mapped to mouse genes from Refseq annotation (see the [paper](http://www.ncbi.nlm.nih.gov/pubmed/25730472) for details).
@@ -279,12 +282,14 @@ abline(v=0.5)
 >
 > HINT: use the `col` parameter.
 >
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r,echo=FALSE}
 plot(myCPM[,2],countdata[,2],ylim=c(0,50),xlim=c(0,3))
 abline(v=0.5,col=4)
 abline(h=10,col=4)
 ```
+</details>
 
 Now that we've checked our filtering method we will filter the DGEList object.
 
@@ -317,6 +322,8 @@ barplot(y$samples$lib.size,names=colnames(y),las=2)
 title("Barplot of library sizes")
 ```
 
+<details>
+<summary>More details</summary>
 ```{r barplot-labelled}
 # we can also adjust the labelling if we want
 barplot(y$samples$lib.size/1e06, names=colnames(y), las=2, ann=FALSE, cex.names=0.75)
@@ -324,6 +331,7 @@ mtext(side = 1, text = "Samples", line = 4)
 mtext(side = 2, text = "Library size (millions)", line = 3)
 title("Barplot of library sizes")
 ```
+</details>
 
 Count data is not normally distributed, so if we want to examine the distributions of the raw counts we need to log the counts. Next we'll use box plots to check the distribution of the read counts on the log2 scale. We can use the `cpm` function to get log2 counts per million, which are corrected for the different library sizes. The `cpm` function also adds a small offset to avoid taking log of zero.  
 ```{r boxplots}
@@ -426,7 +434,8 @@ title("Status")
 > 1. Change the plotting characters such that basal samples have the value `1` and luminal samples have the value `4`. Colour by status (lactate, pregnant, virgin)
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r MDSplot-nicer, echo=FALSE}
 # Solution to 3
 #I'm getting some nicer colours from brewer pal, using the "Dark2" palette.
@@ -438,6 +447,7 @@ plotMDS(y,col=col.status,pch=char.celltype,cex=2)
 legend("topleft",legend=levels(sampleinfo$Status),col=cols,pch=16)
 legend("bottom",legend=levels(sampleinfo$CellType),pch=c(1,4))
 ```
+</details>
 
 The distance between each pair of samples in the MDS plot is calculated as the leading fold change, defined as the root-mean-square of the largest 500 log2-fold changes between that pair of samples. Replicate samples from the same group cluster together in the plot, while samples from different groups form separate clusters. This indicates that the differences between groups are larger than those within groups, i.e., differential expression is greater than the variance and can be detected. In the MDS plot, the distance between basal samples on the left and luminal cells on the right is about 6 units, corresponding to a leading fold change of about 64-fold (2^6 = 64) between basal and luminal. The expression differences between virgin, pregnant and lactating are greater for luminal cells than for basal.
 
@@ -464,7 +474,7 @@ glMDSPlot(y, labels=labels, groups=group, folder="mds")
 
 *Glimma* was created to make interactive versions of some of the popular plots from the *limma* package [@Su2017]. It can be used to obtain MDS plots, and also mean-difference (MD) and volcano plots which will be covered later. The output of `glMDSPlot` is an html page (/mds/MDS-Plot.html) that shows the MDS plot on the left, and the amount of variation explained by each dimension in a barplot on the right. The user can hover over points to find out sample information, and switch between successive dimensions in the MDS plot by clicking on the bars in the barplot. The default MDS plots shows dimensions 1 and 2.
 
-<iframe src="mds/MDS-Plot.html" width="100%" height="1000"></iframe>
+<iframe src="https://raw.githubusercontent.com/mblue9/RNAseq-R/gh-pages/mds/MDS-Plot.html" width="100%" height="1000"></iframe>
 
 
 ## Hierarchical clustering with heatmaps
@@ -497,7 +507,8 @@ col.cell <- c("purple","orange")[sampleinfo$CellType]
 
 # Plot the heatmap
 heatmap.2(highly_variable_lcpm,col=rev(morecols(50)),trace="none", main="Top 500 most variable genes across samples",ColSideColors=col.cell,scale="row")
-
+```
+```{r, eval=FALSE}
 # Save the heatmap
 png(file="High_var_genes.heatmap.png")
 heatmap.2(highly_variable_lcpm,col=rev(morecols(50)),trace="none", main="Top 500 most variable genes across samples",ColSideColors=col.cell,scale="row")
@@ -511,7 +522,8 @@ dev.off()
 > 1. Redo the heatmap using the top 500 LEAST variable genes.
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r heatmap-solution, echo=FALSE}
 # Solution 1 and 2
 mypalette <- brewer.pal(11,"PiYG")
@@ -527,6 +539,7 @@ head(select_var)
 least_variable_lcpm <- logcounts[select_var,]
 heatmap.2(least_variable_lcpm,col=rev(morecols(50)),trace="none", main="Top 500 least variable genes across samples",ColSideColors=col.cell,labCol=group,scale="row",margins=c(8,5))
 ```
+</details>
 
 If we wanted to add more annotations, for example colours for both cell type and status, we can't easily do that with `heatmap.2`, but we could use the `aheatmap` function from the *NMF* package. We can specify which columns we want to use from sampleinfo in `annCol=` and coloured bars will be added for those.
 ```{r heatmap-aheatmap}
@@ -580,7 +593,8 @@ abline(h=0,col="grey")
 > Plot the biased and unbiased MD plots side by side for the same sample to see the before and after TMM normalisation effect.
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r MDplots-solution, echo=FALSE, fig.height=5, fig.width=10}
 par(mfrow=c(1,2))
 plotMD(logcounts,column = 11)
@@ -588,6 +602,7 @@ abline(h=0,col="grey")
 plotMD(y,column = 11)
 abline(h=0,col="grey")
 ```
+</details>
 
 **We need to save a few data objects to use for Day 2 so we don't have to rerun everything**
 
@@ -720,8 +735,8 @@ summary(summa.fit)
 > (HINT: type `?vennDiagram`).
 > Can you show the overlap of differentially expressed genes between the two comparisons? How many genes are commonly differentially expressed?
 >
-
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r vennDiagram, echo=FALSE}
 # Solution
 cont.matrix <- makeContrasts(B.PregVsLac=basal.pregnant - basal.lactate,
@@ -737,6 +752,7 @@ par(mfrow=c(1,1))
 vennDiagram(summa.fit,include=c("up", "down"),counts.col=c("purple", "black"),
     circle.col = c("blue", "green3"))
 ```
+</details>
 
 # Writing out the results
 
@@ -787,12 +803,14 @@ Notice anything interesting about the expression of this gene?
 > Take the top gene from the L.PregVsLactate comparison and make a stripchart of grouped expression as above. (Don't forget to change the title of the plot.)
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r stripcharts-solution, echo=FALSE}
 # Solution
 topTable(fit.cont,coef=2,sort.by="p")
 stripchart(v$E["12992",]~group,vertical=TRUE,las=2,cex.axis=0.8,pch=16,cex=1.3,col=nice.col,method="jitter",ylab="Normalised log2 expression",main="Csn1s2b", cex.axis=0.6)
 ```
+</details>
 
 An interactive version of the volcano plot above that includes the raw per sample values in a separate panel is possible via the `glXYPlot` function in the *Glimma* package.
 
@@ -809,7 +827,7 @@ glXYPlot(x=fit.cont$coefficients[,1], y=fit.cont$lods[,1],
 
 This function creates an html page (./volcano/XY-Plot.html) with a volcano plot on the left and a plot showing the log-CPM per sample for a selected gene on the right. A search bar is available to search for genes of interest.
 
-<iframe src="volcano/XY-Plot.html" width="100%" height="1000"></iframe>
+<iframe src="https://raw.githubusercontent.com/mblue9/RNAseq-R/gh-pages/volcano/XY-Plot.html" width="100%" height="1000"></iframe>
 
 
 # Testing relative to a threshold (TREAT)
@@ -840,7 +858,8 @@ abline(h=0,col="grey")
 > HINT: what is the corresponding logFC value of 50\% fold change? Assume basal.pregnant is 50\% higher than basal.lactate
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r, echo=FALSE}
 #Solution
 cutoff<-log2(1.5)
@@ -849,7 +868,7 @@ res.treat <- decideTests(fit.treat)
 summary(res.treat)
 topTable(fit.treat,coef=1,sort.by="p")
 ```
-
+</details>
 
 An interactive version of the mean-difference plots is possible via the `glMDPlot` function in the *Glimma* package.
 
@@ -862,7 +881,7 @@ glMDPlot(fit.treat, coef=1, counts=v$E, groups=group2,
 
 As with the volcano plot example above, this function creates an html page (./md/MD-Plot.html) that allows the user to search for their favourite gene.
 
-<iframe src="md/MD-Plot.html" width="100%" height="1000"></iframe>
+<iframe src="https://raw.githubusercontent.com/mblue9/RNAseq-R/gh-pages/md/MD-Plot.html" width="100%" height="1000"></iframe>
 
 
 # Gene Set Testing
@@ -908,13 +927,14 @@ topGO(go_length, n=10)
 > Perform GO analysis for the second comparison, "L.PregVsLac", taking into account gene length information
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r, echo=FALSE}
 go_LPregvsLac <- goana(fit.cont,coef="L.PregVsLac",species="Mm",
                        covariate=gene_length)
 topGO(go_LPregvsLac, n=10)
 ```
-
+</details>
 
 Notes
 
@@ -974,7 +994,8 @@ write.csv(gst.camera,file="gst_BPregVsLac.csv")
 > You will need to load in the hallmark gene sets. Call the object `Mm.H`.
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r, echo=FALSE}
 Mm.H <- readRDS("data/Mm.c2.all.v7.1.entrez.rds")
 H.ind <- ids2indices(Mm.H, rownames(v))
@@ -982,7 +1003,7 @@ H.camera <- camera(v,index=H.ind,design=design,contrast = cont.matrix[,1],inter.
 table(H.camera$FDR < 0.05)
 H.camera[1:10,]
 ```
-
+</details>
 
 ## ROAST gene set testing
 
@@ -1019,7 +1040,8 @@ Each row corresponds to a single gene set. The NGenes column gives the number of
 > 1. Look for gene sets containing "WNT" in the name and see whether they tend to be differentially expressed in basal pregnant vs lactating.
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r, echo=FALSE}
 #Solution 1
 myc.rst2 <- roast(v,index=c2.ind[myc],design=design,contrast=cont.matrix[,2],nrot=999)
@@ -1030,7 +1052,7 @@ wnt <- grep("WNT",names(c2.ind))
 wnt.rst <- roast(v,index=c2.ind[wnt],design=design,contrast=cont.matrix[,1],nrot=999)
 wnt.rst[1:15,]
 ```
-
+</details>
 
 Notes
 
@@ -1068,7 +1090,8 @@ Here, genes are represented by bars and are ranked from left to right by decreas
 > by adding a gene set to the `index2` argument. Produce a barcodeplot with two sets of your choosing.
 >
 
-**Solution**
+<details>
+<summary>**Solution**</summary>
 ```{r barcodeplots-solution, echo=FALSE}
 # Solution 1
 barcodeplot(fit.cont$coeff[,2], index=c2.ind[["DANG_REGULATED_BY_MYC_UP"]], main="L.PregVsLac: DANG_REGULATED_BY_MYC_UP")
@@ -1077,7 +1100,7 @@ barcodeplot(fit.cont$coeff[,2], index=c2.ind[["REACTOME_REPRESSION_OF_WNT_TARGET
 # Solution 3
 barcodeplot(fit.cont$coeff[,2], index=c2.ind[["REACTOME_REPRESSION_OF_WNT_TARGET_GENES"]], index2=c2.ind[["PID_WNT_CANONICAL_PATHWAY"]], main="L.PregVsLac: REACTOME_REPRESSION_OF_WNT_TARGET_GENES and PID_WNT_CANONICAL_PATHWAY sets")
 ```
-
+</details>
 
 # Record package versions
 
