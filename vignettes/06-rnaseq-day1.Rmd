@@ -26,7 +26,7 @@ knitr::opts_knit$set(root.dir = normalizePath(".."))
 # Data files and Resources
 
 The RNA-Seq data files used is this workshop are available from [Figshare](https://figshare.com/s/1d788fd384d33e913a2a). They were originally obtained from [GSE60450](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). 
-You should download the 5 files from the links below and place them into a folder called `data` in your working directory.
+We will show you how to import the files into R from the links. Alternatively you could download them and place them in your working directory (e.g. into a folder called `data` and then refer to them with `data/filename`).
 
 Data files:
 
@@ -111,9 +111,9 @@ Download and read in the data.
 
 ```{r}
 # Read the data into R
-seqdata <- read.delim("data/GSE60450_Lactation-GenewiseCounts.txt", stringsAsFactors = FALSE)
+seqdata <- read.delim("https://ndownloader.figshare.com/files/5057929?private_link=1d788fd384d33e913a2a", stringsAsFactors = FALSE)
 # Read the sample information into R
-sampleinfo <- read.delim("data/SampleInfo.txt", stringsAsFactors = TRUE)
+sampleinfo <- read.delim("https://ndownloader.figshare.com/files/5999829?private_link=1d788fd384d33e913a2a)", stringsAsFactors = TRUE)
 ```
 
 Let's take a look at the data. You can use the `head` command to see the first 6 lines. The `dim` command will tell you how many rows and columns the data frame has.
@@ -400,7 +400,7 @@ title("Status")
 # Old sampleinfo
 sampleinfo
 # I'm going to write over the sampleinfo object with the corrected sample info
-sampleinfo <- read.delim("data/SampleInfo_Corrected.txt", stringsAsFactors = TRUE)
+sampleinfo <- read.delim("https://ndownloader.figshare.com/files/5999832?private_link=1d788fd384d33e913a2a", stringsAsFactors = TRUE)
 sampleinfo
 # We need to correct the info for the groups
 group <- factor(paste(sampleinfo$CellType,sampleinfo$Status,sep="."))
@@ -950,7 +950,7 @@ Here we will be using the C2 gene sets for mouse, available as .rdata files from
 
 ```{r}
 # Load in the mouse c2 gene sets as Mm.c2
-Mm.c2 <- readRDS("data/Mm.c2.all.v7.1.entrez.rds")
+Mm.c2 <- readRDS("http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.c2.all.v7.1.entrez.rds")
 # Have a look at the first few gene sets
 names(Mm.c2)[1:5]
 # Number of gene sets in C2
@@ -997,7 +997,7 @@ write.csv(gst.camera,file="gst_BPregVsLac.csv")
 <details>
 <summary>**Solution**</summary>
 ```{r, echo=FALSE}
-Mm.H <- readRDS("data/Mm.c2.all.v7.1.entrez.rds")
+Mm.H <- readRDS("http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.h.all.v7.1.entrez.rds")
 H.ind <- ids2indices(Mm.H, rownames(v))
 H.camera <- camera(v,index=H.ind,design=design,contrast = cont.matrix[,1],inter.gene.cor=0.05)
 table(H.camera$FDR < 0.05)

@@ -5,6 +5,7 @@ Dockerfile
 .*.md$
 .*.html$
 .*.pdf$
+fig*
 ^img
 requirements.txt
 _site
