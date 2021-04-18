@@ -20,6 +20,7 @@ Imports:
     edgeR,
     Glimma,
     org.Mm.eg.db,
+    GO.db,
     gplots,
     NMF,
     RColorBrewer

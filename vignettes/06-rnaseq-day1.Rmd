@@ -63,7 +63,7 @@ To install the packages you can:
 ```{r, eval=FALSE}
 if (!requireNamespace("BiocManager"))
     install.packages("BiocManager")
-BiocManager::install(c("limma", "edgeR", "Glimma", "org.Mm.eg.db", "gplots", "RColorBrewer", "NMF"))
+BiocManager::install(c("limma", "edgeR", "Glimma", "org.Mm.eg.db", "GO.db", "gplots", "RColorBrewer", "NMF"))
 ```
 
 # Overview
