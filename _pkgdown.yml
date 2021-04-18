@@ -7,6 +7,7 @@ template:
 
 home:
   title: "RNA-seq analysis in R"
+  type: inverse
   
 toc:
   depth: 4
