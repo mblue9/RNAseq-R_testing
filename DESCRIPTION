@@ -21,6 +21,7 @@ Imports:
     Glimma,
     org.Mm.eg.db,
     BiasedUrn,
+    GO.db,
     gplots,
     NMF,
     RColorBrewer
