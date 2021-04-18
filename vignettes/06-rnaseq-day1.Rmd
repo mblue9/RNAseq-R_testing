@@ -754,7 +754,21 @@ vennDiagram(summa.fit,include=c("up", "down"),counts.col=c("purple", "black"),
 ```
 </details>
 
-# Writing out the results
+The *limma* `topTable` function summarises the output in a table format. Significant DE genes for a particular comparison can be identified by selecting genes with a p-value smaller than a chosen cut-off value and/or a fold change greater than a chosen value in this table. By default the table will be sorted by the B statistic, which is the log-odds of differential expression. Usually the B statistic and p-value ranking will be the same, but this is not always the case. We will explicitly rank by p-value, which we can specify with the `sort.by` argument.
+
+The `topTable` command will always output the top 10 genes by default, even if they are not statistically significant. We can specify the coefficient we are interested in by the name we used in the contrast matrix ("B.PregVsLac"), or by the column number.
+
+```{r}
+topTable(fit.cont,coef="B.PregVsLac",sort.by="p")
+## This will give the same output
+topTable(fit.cont,coef=1,sort.by="p")
+```
+
+We can save the results table using the `write.csv` function, which writes the results out to a csv file, which you can open in excel.
+
+```{r eval=FALSE}
+write.csv(limma.res,file="B.PregVsLacResults.csv",row.names=FALSE)
+```
 
 # Plots after testing for DE
 
