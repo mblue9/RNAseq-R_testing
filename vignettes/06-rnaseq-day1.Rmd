@@ -32,7 +32,7 @@ Data files:
 
 # Acknowledgements
 
-This material was inspired by this [case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and some of the quality control steps from this [material](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html).
+This material was inspired by this [case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and quality control steps from this [material](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html).
 
 
 # Bioconductor/R Packages

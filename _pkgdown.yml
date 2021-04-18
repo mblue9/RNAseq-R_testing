@@ -18,6 +18,12 @@ navbar:
   left:
     - text: Workshop
       href: articles/06-rnaseq-day1.html
+    - text: Applying RNA-seq
+      menu:
+      - text: Challenge
+        href: articles/08-applying-rnaseq.html
+      - text: Solutions
+        href: articles/09-applying-rnaseq-solutions.html
 
   right:
    - icon: fab fa-github
