@@ -11,6 +11,10 @@ output:
 minutes: 300
 layout: page
 bibliography: ref.bib
+resource_files:
+  - mds
+  - volcano
+  - md
 ---
 
 # Data files and Resources
@@ -466,7 +470,7 @@ legend("bottomright",legend=levels(sampleinfo$CellType),pch=c(1,4))
 
 Another alternative is to generate an interactive MDS plot using the *Glimma* package. This allows the user to interactively explore the different dimensions.
 
-*Glimma* was created to make interactive versions of some of the popular plots from the *limma* package [@Su2017]. It can be used to obtain MDS plots, and also mean-difference (MD) and volcano plots which will be covered later. The output of `glMDSPlot` is an html page (mds/MDS-Plot.html), shown below, that shows the MDS plot on the left, and the amount of variation explained by each dimension in a barplot on the right. The user can hover over points to find out sample information, and switch between successive dimensions in the MDS plot by clicking on the bars in the barplot. The default MDS plots shows dimensions 1 and 2.
+*Glimma* was created to make interactive versions of some of the popular plots from the *limma* package [@Su2017]. It can be used to obtain MDS plots, and also mean-difference (MD) and volcano plots which will be covered later. The output of `glMDSPlot` is an html page (./mds/MDS-Plot.html), shown below, that shows the MDS plot on the left, and the amount of variation explained by each dimension in a barplot on the right. The user can hover over points to find out sample information, and switch between successive dimensions in the MDS plot by clicking on the bars in the barplot. The default MDS plots shows dimensions 1 and 2.
 
 ```{r}
 labels <- paste(sampleinfo$SampleName, sampleinfo$CellType, sampleinfo$Status)
