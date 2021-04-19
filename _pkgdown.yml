@@ -26,7 +26,6 @@ navbar:
           href: articles/08-applying-rnaseq.html
         - text: Applying RNA-seq - Solutions
           href: articles/09-applying-rnaseq-solutions.html
-
   right:
    - icon: fab fa-github
      href: https://github.com/mblue9/RNAseq-R/

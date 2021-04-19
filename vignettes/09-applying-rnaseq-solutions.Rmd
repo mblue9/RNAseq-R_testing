@@ -59,6 +59,7 @@ htseq-count, a function from the tool HTSeq
 
 For the purpose of today's workshop, we will be analysing the gene level counts.
 
+
 ## Importing the data into R
 
 First, let's load all the libraries we will need today.
@@ -78,7 +79,7 @@ counts <- read.delim(file="https://ndownloader.figshare.com/files/5999835?privat
 sampleinfo <- read.delim(file="https://ndownloader.figshare.com/files/5999838?private_link=e08e71c42f118dbe8be6", stringsAsFactors = TRUE)
 ```
 
-Check that the data has benn imported correctly
+Check that the data has benn imported correctly.
 
 ```{r}
 head(counts)
