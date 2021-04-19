@@ -26,10 +26,10 @@ lessons up to and including vectorisation.
 
 ### Lecture slides
 
-- [RNASeq basics](inst/vignettes/slides/RNASeq_basics.pdf)
-- [Filtering and QC](slides/RNASeq_filtering_qc.pdf)
-- [Differential expression](slides/Differential_Expression_Analysis.pdf)
-- [Gene set testing](slides/Gene_set_testing.pdf)
+- [RNASeq basics](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/COMBINE-Australia/RNAseq-R/gh-pages/slides/RNASeq_basics.pdf)
+- [Filtering and QC](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/COMBINE-Australia/RNAseq-R/gh-pages/slides/RNASeq_filtering_qc.pdf)
+- [Differential expression](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/COMBINE-Australia/RNAseq-R/gh-pages/slides/Differential_Expression_Analysis.pdf)
+- [Gene set testing](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/COMBINE-Australia/RNAseq-R/gh-pages/slides/Gene_set_testing.pdf)
 
 ### Supplementary lessons
 
