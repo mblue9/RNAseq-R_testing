@@ -1,56 +1,55 @@
-RNAseq analysis in R
-====================
+# RNAseq analysis in R
 
-This workshop was first taught
-[here](http://combine-australia.github.io/2016-05-11-RNAseq/).
+In this workshop, you will be learning how to analyse RNA-seq count data, using R. This will include importing the data into R, quality control and performing differential expression analysis and gene set testing, with a focus on the limma-voom analysis workflow. You will learn how to generate common plots for analysis and visualisation of gene expression data, such as boxplots and heatmaps. You will also be learning how alignment and counting of raw RNA-seq data can be performed in R. This workshop is aimed at biologists interested in learning how to perform differential expression analysis of RNA-seq data when reference genomes are available.
 
-Some of these materials are adapted from the
-[R-novice-gapminder](https://github.com/swcarpentry/r-novice-gapminder/),
-while subsequent materials were derived from X,
-with substantial new additions from X, Y, Z.
+## Prerequisites
 
-These lesson materials are designed to be run *after* a complete introduction
-to R course (e.g. SWC or DC) or equivalent background knowledge.
+Some basic R knowledge is assumed.
+If you are not familiar with the R statistical programming language we
+strongly encourage you to work through an introductory R course before
+attempting these materials.
+We recommend the Software Carpentry
+[R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+lessons up to and including vectorisation.
 
-## Contributing
 
-Please see the current list of [issues][] for ideas for contributing to this
-repository, and the [guidelines and instructions for contributing][contrib].
+## Data
 
-When editing topic pages, you should change the source R Markdown file.
-Afterwards you can render the pages by running `make preview` from the base of
-the repository. Building the rendered page with the Makefile requires
-installing some dependencies first. In addition to the dependencies listed in
-the [lesson template documentation][dependencies], you also need to install the
-R package [knitr][].
+- Mouse mammary data (counts): [https://figshare.com/s/1d788fd384d33e913a2a](https://figshare.com/s/1d788fd384d33e913a2a)
+- Drosophila data (counts): [https://figshare.com/s/e08e71c42f118dbe8be6](https://figshare.com/s/e08e71c42f118dbe8be6)
 
-Once you've made your edits and looked over the rendered html files, you should
-add, commit, and push **only the source R Markdown file(s)** to your fork, and
-then open a pull request. The repository  maintainers will run the html
-generation process once the pull request has been merged. You can learn more
-about the design of the build process [here][design].
+## RNAseq analysis in R
 
-## Getting Help
+- [R for RNAseq](articles/00-r-rstudio-intro.html)
+- [Quality control, differential expression, and gene set testing](articles/06-rnaseq-day1.html)
+- [Applying RNAseq](articles/08-applying-rnaseq.html) ([solutions](articles/09-applying-rnaseq-solutions.html))
 
-These notes refer to SWC help, but note that this workshop has not yet been
-submitted to SWC or DC. So please use this github repository for any
-correspondence for now.
+### Lecture slides
 
-Please see
-[https://github.com/swcarpentry/lesson-example](https://github.com/swcarpentry/lesson-example)
-for instructions on formatting, building, and submitting lessons, or run
-`make` in this directory for a list of helpful commands.
+- [RNASeq basics](inst/vignettes/slides/RNASeq_basics.pdf)
+- [Filtering and QC](slides/RNASeq_filtering_qc.pdf)
+- [Differential expression](slides/Differential_Expression_Analysis.pdf)
+- [Gene set testing](slides/Gene_set_testing.pdf)
 
-If you have questions or proposals, please send them to the [r-discuss][]
-mailing list.
+### Supplementary lessons
 
-[contrib]: https://github.com/swcarpentry/r-novice-gapminder/blob/gh-pages/CONTRIBUTING.md
-[dependencies]: https://github.com/swcarpentry/lesson-template#dependencies
-[design]: https://github.com/swcarpentry/r-novice-gapminder/blob/gh-pages/DESIGN.md
-[issues]: https://github.com/swcarpentry/r-novice-gapminder/issues
-[knitr]: http://cran.r-project.org/web/packages/knitr/index.html
-[r-discuss]: http://lists.software-carpentry.org/mailman/listinfo/r-discuss_lists.software-carpentry.org
+Introductory R materials:
 
-## Rendered version of lessons
+- [Introduction to R and RStudio](https://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
+- [Project Management With RStudio](https://swcarpentry.github.io/r-novice-gapminder/02-project-intro/index.html)
+- [Seeking help](https://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/index.html)
+- [Data Structures](https://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/index.html)
+- [Exploring Data Frames](https://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/index.html)
+- [Subsetting Data](https://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html)
 
-You can also view [the rendered version of this material](http://combine-australia.github.io/RNAseq-R/).
+Additional RNAseq materials:
+
+- [Alignment and feature counting](07-rnaseq-day2.html)
+
+Data: Mouse mammary data (fastq files): [https://figshare.com/s/f5d63d8c265a05618137](https://figshare.com/s/f5d63d8c265a05618137)
+
+### Additional resources
+
+[Bioconductor help](https://www.bioconductor.org/help/)  
+[Biostars](https://www.biostars.org/)  
+[SEQanswers](http://seqanswers.com/)  
