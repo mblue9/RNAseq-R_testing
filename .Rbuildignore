@@ -12,6 +12,7 @@ _site
 _includes
 _layout
 .*Rproj*
+.Rhistory
 AUTHORS
 .mailmap
 .nojekyll

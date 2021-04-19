@@ -11,6 +11,7 @@ CONDUCT.html
 _site
 .DS_Store
 .Rproj.user
+.Rhistory
 # Inputs and outputs of the RNAseq analysis
 data/*
 *.bam
