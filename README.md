@@ -44,7 +44,7 @@ Introductory R materials:
 
 Additional RNAseq materials:
 
-- [Alignment and feature counting](07-rnaseq-day2.html)
+- [Alignment and feature counting](articles/07-rnaseq-day2.html)
 
 Data: Mouse mammary data (fastq files): [https://figshare.com/s/f5d63d8c265a05618137](https://figshare.com/s/f5d63d8c265a05618137)
 

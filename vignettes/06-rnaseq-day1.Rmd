@@ -17,7 +17,36 @@ resource_files:
   - md
 ---
 
-# Data files and Resources
+# Introduction
+
+Measuring gene expression on a genome-wide scale has become common practice over the last two decades or so, with microarrays predominantly used pre-2008. With the advent of next generation sequencing technology in 2008, an increasing number of scientists use this technology to measure and understand changes in gene expression in often complex systems. As sequencing costs have decreased, using RNA-Seq to simultaneously measure the expression of tens of thousands of genes for multiple samples has never been easier. The cost of these experiments has now moved from generating the data to storing and analysing it.
+
+There are many steps involved in analysing an RNA-Seq experiment. Analysing an RNAseq experiment begins with sequencing reads. These are aligned to a reference genome, then the number of reads mapped to each gene can be counted. This results in a table of counts, which is what we perform statistical analyses on in R. While mapping and counting are important and necessary tasks, today we will be starting from the count data and getting stuck into analysis.
+
+## Acknowledgements
+
+This material was inspired by this [case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and quality control steps from this [material](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html).
+
+
+# Overview
+
+* Importing table of counts
+* Adding annotation
+* Filtering lowly expressed genes
+* Quality control
+* Normalisation for composition bias
+* Differential expression analysis
+* Testing relative to a threshold
+* Visualisation
+* Gene set testing
+
+## Mouse mammary gland dataset
+
+The data for this tutorial comes from a paper by [@Fu2015]. Both the raw data (sequence reads) and processed data (counts) can be downloaded from Gene Expression Omnibus database (GEO) under accession number [GSE60450](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). This study examines the expression profiles of basal stem-cell enriched cells (B) and committed luminal cells (L) in the mammary gland of virgin, pregnant and lactating mice. Six groups are present, with one for each combination of cell type and mouse status. Each group contains two biological replicates.
+We will first use the counts file as a starting point for our analysis. This data has already been aligned to the mouse genome. The command line tool featureCounts [@Liao2014] was used to count reads mapped to mouse genes from Refseq annotation (see [@Fu2015] for details).
+
+
+## Data files
 
 The RNA-Seq data files used is this workshop are available from [Figshare](https://figshare.com/s/1d788fd384d33e913a2a). They were originally obtained from [GSE60450](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). 
 We will show you how to import the files into R from the links. Alternatively you could download them and place them in your working directory, for example in a folder called `data` and then refer to them in your code as e.g  `"data/GSE60450_Lactation-GenewiseCounts.txt"`).
@@ -30,12 +59,7 @@ Data files:
 * [Mm.c2.all.v7.1.entrez.rds](http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.c2.all.v7.1.entrez.rds)  
 * [Mm.h.all.v7.1.entrez.rds](http://bioinf.wehi.edu.au/MSigDB/v7.1/Mm.h.all.v7.1.entrez.rds)
 
-# Acknowledgements
-
-This material was inspired by this [case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and quality control steps from this [material](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html).
-
-
-# Bioconductor/R Packages
+## Bioconductor/R Packages
 
 Packages used:
 
@@ -58,30 +82,7 @@ if (!requireNamespace("BiocManager"))
 BiocManager::install(c("limma", "edgeR", "Glimma", "org.Mm.eg.db", "BiasedUrn", "GO.db", "gplots", "RColorBrewer", "NMF"))
 ```
 
-# Overview
-
-* Importing table of counts
-* Adding annotation
-* Filtering lowly expressed genes
-* Quality control
-* Normalisation for composition bias
-* Differential expression analysis
-* Testing relative to a threshold
-* Visualisation
-* Gene set testing
-
-# Introduction and data import
-
-Measuring gene expression on a genome-wide scale has become common practice over the last two decades or so, with microarrays predominantly used pre-2008. With the advent of next generation sequencing technology in 2008, an increasing number of scientists use this technology to measure and understand changes in gene expression in often complex systems. As sequencing costs have decreased, using RNA-Seq to simultaneously measure the expression of tens of thousands of genes for multiple samples has never been easier. The cost of these experiments has now moved from generating the data to storing and analysing it.
-
-There are many steps involved in analysing an RNA-Seq experiment. Analysing an RNAseq experiment begins with sequencing reads. These are aligned to a reference genome, then the number of reads mapped to each gene can be counted. This results in a table of counts, which is what we perform statistical analyses on in R. While mapping and counting are important and necessary tasks, today we will be starting from the count data and getting stuck into analysis.
-
-## Mouse mammary gland dataset
-
-The data for this tutorial comes from a paper by [@Fu2015]. Both the raw data (sequence reads) and processed data (counts) can be downloaded from Gene Expression Omnibus database (GEO) under accession number [GSE60450](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). This study examines the expression profiles of basal stem-cell enriched cells (B) and committed luminal cells (L) in the mammary gland of virgin, pregnant and lactating mice. Six groups are present, with one for each combination of cell type and mouse status. Each group contains two biological replicates.
-We will first use the counts file as a starting point for our analysis. This data has already been aligned to the mouse genome. The command line tool featureCounts [@Liao2014] was used to count reads mapped to mouse genes from Refseq annotation (see [@Fu2015] for details).
-
-## Importing the data
+# Importing the data
 
 Set up an RStudio project `File > New Project`. Then open a new R script `File > New File > R Script` and copy the commands below.
 
