@@ -17,7 +17,15 @@ navbar:
   type: default
   left:
     - text: Workshop
-      href: articles/06-rnaseq-day1.html
+      menu:
+        - text: R for RNA-seq
+          href: articles/00-r-rstudio-intro.html
+        - text: Differential expression analysis
+          href: articles/06-rnaseq-day1.html
+        - text: Applying RNA-seq - Challenge
+          href: articles/08-applying-rnaseq.html
+        - text: Applying RNA-seq - Solutions
+          href: articles/09-applying-rnaseq-solutions.html
 
   right:
    - icon: fab fa-github

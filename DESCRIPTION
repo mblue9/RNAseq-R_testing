@@ -20,6 +20,7 @@ Imports:
     edgeR,
     Glimma,
     org.Mm.eg.db,
+    org.Dm.eg.db,
     BiasedUrn,
     GO.db,
     gplots,
