@@ -2,14 +2,19 @@
 title: RNA-seq analysis in R
 subtitle: R for RNAseq
 author: "Harriet Dashnow"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 minutes: 40
 output: 
   html_document:
     toc: yes
     toc_float: yes
     toc_depth: 2
-
 ---
+
+## Acknowlegements
+
+Some of this material was adapted from
+[Software Carpentry's R lessons](https://github.com/swcarpentry/r-novice-gapminder/)
 
 ## Introduction to RStudio
 

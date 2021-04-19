@@ -1,6 +1,6 @@
 # RNAseq analysis in R
 
-In this workshop, you will be learning how to analyse RNA-seq count data, using R. This will include importing the data into R, quality control and performing differential expression analysis and gene set testing, with a focus on the limma-voom analysis workflow. You will learn how to generate common plots for analysis and visualisation of gene expression data, such as boxplots and heatmaps. You will also be learning how alignment and counting of raw RNA-seq data can be performed in R. This workshop is aimed at biologists interested in learning how to perform differential expression analysis of RNA-seq data when reference genomes are available.
+In this workshop, you will be learning how to analyse RNA-seq count data, using R. This will include importing the data into R, quality control and performing differential expression analysis and gene set testing, with a focus on the limma-voom analysis workflow. You will learn how to generate common plots for analysis and visualisation of gene expression data, such as boxplots and heatmaps. You will also be learning how alignment and counting of raw RNA-seq data can be performed in R. This workshop is aimed at biologists interested in learning how to perform differential expression analysis of RNA-seq data when reference genomes are available. It was first taught [here](http://combine-australia.github.io/2016-05-11-RNAseq/).
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ strongly encourage you to work through an introductory R course before
 attempting these materials.
 We recommend the Software Carpentry
 [R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
-lessons up to and including vectorisation.
+lessons up to and including Subsetting Data. Links to these modules are listed under **Supplementary lessons** below.
 
 
 ## Data

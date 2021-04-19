@@ -2,6 +2,7 @@
 title: "RNA-seq analysis in R"
 subtitle: "Analysis of Pasilla Knock-down Experiment in Drosophila"
 author: "Belinda Phipson and Jovana Maksimovic"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 minutes: 120
 output: 
   html_document:
