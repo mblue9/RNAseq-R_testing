@@ -25,7 +25,8 @@ Imports:
     GO.db,
     gplots,
     NMF,
-    RColorBrewer
+    RColorBrewer,
+    Rsubread
 Suggests:
     knitr,
     rmarkdown,
