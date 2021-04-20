@@ -172,8 +172,11 @@ We can get a summary of the proportion of reads that mapped to the reference gen
 
 ```{r echo=FALSE}
 # locate precreated bam files for rendering this doc
-bam.files <- list.files(path = system.file("extdata/data", package = "RNAseqRworkshop"), pattern = ".BAM$", full.names = TRUE)
-bam.files
+bam.files <- list.files(path = system.file("extdata/bams", package = "RNAseqRworkshop"), pattern = ".BAM$", full.names = TRUE)
+
+# print names emulating what they should see when running the command below
+printfiles <- basename(bam.files)
+paste0("./data/", printfiles)
 ```
 
 ```{r eval=FALSE}
