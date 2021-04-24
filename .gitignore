@@ -1,0 +1,20 @@
+README.html
+LAYOUT.html
+FAQ.html
+DESIGN.html
+CONTRIBUTING.html
+CONDUCT.html
+*.html
+*.md
+*~
+*.pyc
+_site
+.DS_Store
+.Rproj.user
+.Rhistory
+# Inputs and outputs of the RNAseq analysis
+data/*
+*.bam
+*.indel
+*.fastq.gz
+glimma-plots/*
