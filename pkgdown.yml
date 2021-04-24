@@ -1,0 +1,14 @@
+pandoc: 2.11.4
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  00-r-rstudio-intro: 00-r-rstudio-intro.html
+  06-rnaseq-day1: 06-rnaseq-day1.html
+  07-rnaseq-day2: 07-rnaseq-day2.html
+  08-applying-rnaseq: 08-applying-rnaseq.html
+  09-applying-rnaseq-solutions: 09-applying-rnaseq-solutions.html
+last_built: 2021-04-24T21:02Z
+urls:
+  reference: https://mblue9.github.io/RNAseq-R//reference
+  article: https://mblue9.github.io/RNAseq-R//articles
+

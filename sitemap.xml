@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R//index.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R//articles/00-r-rstudio-intro.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R//articles/06-rnaseq-day1.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R//articles/07-rnaseq-day2.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R//articles/08-applying-rnaseq.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R//articles/09-applying-rnaseq-solutions.html</loc>
+  </url>
+</urlset>
