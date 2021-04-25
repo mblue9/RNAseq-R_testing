@@ -2,7 +2,7 @@ on: [push, pull_request]
 
 env:
   cache-version: v1
-  repo-name: mblue9/RNAseq-R
+  repo-name: mblue9/RNAseq-R_testing
 
 jobs:
   job1:
