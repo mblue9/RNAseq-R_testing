@@ -296,7 +296,7 @@ HINT: use the `col` parameter.
 
 <div class="responsive-container-learnr">
   <iframe id="learnr_iframe"
-    src="https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1"
+    src="https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/"
     gesture="media"  allowfullscreen
     scrolling="yes">
   </iframe>
