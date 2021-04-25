@@ -296,13 +296,13 @@ HINT: use the `col` parameter.
 
 <div class="responsive-container-learnr">
   <iframe id="learnr_iframe"
-    src="https://mblue9.shinyapps.io/challenge1/" 
+    src="https://hub.gke2.mybinder.org/user/mblue9-learnr_apps_binder-dxp91qhr/shiny/RNAseq-R/?token=KEMjWoHVR1iUWJBV0Jn-6A" 
     gesture="media"  allowfullscreen
     scrolling="yes">
   </iframe>
 </div>
 <script>
-  iFrameResize({ checkOrigin: 'https://mblue9.shinyapps.io' , log: false }, '#learnr_iframe')
+  iFrameResize({ checkOrigin: 'https://hub.gke2.mybinder.org' , log: false }, '#learnr_iframe')
 </script>
 
 <!---------------->
