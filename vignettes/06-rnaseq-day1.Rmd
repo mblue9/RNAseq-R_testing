@@ -294,6 +294,9 @@ HINT: use the `col` parameter.
 
 <!---LEARNR CHALLENGE 1-->
 
+Click the launch button to try the challenge interactively. Takes a few seconds to launch.
+[![Binder](http://mybinder.org/badge_logo.svg)]https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/
+
 <div class="responsive-container-learnr">
   <iframe id="learnr_iframe"
     src="https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/"
