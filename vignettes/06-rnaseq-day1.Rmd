@@ -295,7 +295,7 @@ HINT: use the `col` parameter.
 <!---LEARNR CHALLENGE 1-->
 
 Click the launch button to try the challenge interactively. Takes a few seconds to launch.
-[![Binder](http://mybinder.org/badge_logo.svg)]https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/
+[![Binder](http://mybinder.org/badge_logo.svg)]https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/)
 
 <div class="responsive-container-learnr">
   <iframe id="learnr_iframe"
@@ -477,6 +477,24 @@ save.image("challenge2.Rdata")
 HINT: use `pch` argument. Try `pch=16` and see what happens.
 3. Change the plotting characters such that basal samples have the value `1` and luminal samples have the value `4`. Colour by status (lactate, pregnant, virgin)
 </div>
+
+<!---LEARNR CHALLENGE 1-->
+
+Click the launch button to try the challenge interactively. Takes a few seconds to launch.
+[![Binder](http://mybinder.org/badge_logo.svg)]https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/RNAseq-R/challenge2/)
+
+<div class="responsive-container-learnr">
+  <iframe id="learnr_iframe"
+    src="https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/RNAseq-R/challenge2/"
+    gesture="media"  allowfullscreen
+    scrolling="yes">
+  </iframe>
+</div>
+<script>
+  iFrameResize({ checkOrigin: 'https://mybinder.org' , log: false }, '#learnr_iframe')
+</script>
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
