@@ -295,18 +295,8 @@ HINT: use the `col` parameter.
 <!---LEARNR CHALLENGE 1-->
 
 Click the launch button to try the challenge interactively. Takes a few seconds to launch.
-[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/)
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge1/)
 
-<div class="responsive-container-learnr">
-  <iframe id="learnr_iframe"
-    src="https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge1/"
-    gesture="media"  allowfullscreen
-    scrolling="yes">
-  </iframe>
-</div>
-<script>
-  iFrameResize({ checkOrigin: 'https://mybinder.org' , log: false }, '#learnr_iframe')
-</script>
 
 <!---------------->
 
@@ -481,18 +471,7 @@ HINT: use `pch` argument. Try `pch=16` and see what happens.
 <!---LEARNR CHALLENGE 1-->
 
 Click the launch button to try the challenge interactively. Takes a few seconds to launch.
-[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge2/)
-
-<div class="responsive-container-learnr">
-  <iframe id="learnr_iframe"
-    src="https://mybinder.org/v2/gh/mblue9/learnr_apps_binder/HEAD?urlpath=shiny/challenge2/"
-    gesture="media"  allowfullscreen
-    scrolling="yes">
-  </iframe>
-</div>
-<script>
-  iFrameResize({ checkOrigin: 'https://mybinder.org' , log: false }, '#learnr_iframe')
-</script>
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge2/)
 
 <!---------------->
 
