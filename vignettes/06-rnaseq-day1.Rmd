@@ -16,20 +16,6 @@ resource_files:
   - volcano
   - md
 ---
-<!-- To resize learnr tutorial iframes, from https://github.com/rstudio/learnr/issues/392#issuecomment-655537795 -->
-<style>
-.responsive-container-learnr {
-  position: relative;
-}  
-.responsive-container-learnr iframe {
-  position: relative;
-  z-index: 100;
-  border: 0;
-  width: 1px;
-  min-width: 100%;
-}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js" type="text/javascript"></script>
 
 # Introduction
 
@@ -294,7 +280,7 @@ HINT: use the `col` parameter.
 
 <!---LEARNR CHALLENGE 1-->
 
-Click the launch button to try the challenge interactively. Takes a few seconds to launch.
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge1/)
 
 
@@ -469,8 +455,7 @@ HINT: use `pch` argument. Try `pch=16` and see what happens.
 </div>
 
 <!---LEARNR CHALLENGE 1-->
-
-Click the launch button to try the challenge interactively. Takes a few seconds to launch.
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge2/)
 
 <!---------------->
@@ -1232,7 +1217,3 @@ sessionInfo()
 ```
 
 # References
-
-<script>
-  iFrameResize({}, ".interactive");
-</script>
