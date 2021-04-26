@@ -45,6 +45,13 @@ This material was inspired by this [case study]((http://www.statsci.org/smyth/pu
 The data for this tutorial comes from a paper by [@Fu2015]. Both the raw data (sequence reads) and processed data (counts) can be downloaded from Gene Expression Omnibus database (GEO) under accession number [GSE60450](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450). This study examines the expression profiles of basal stem-cell enriched cells (B) and committed luminal cells (L) in the mammary gland of virgin, pregnant and lactating mice. Six groups are present, with one for each combination of cell type and mouse status. Each group contains two biological replicates.
 We will first use the counts file as a starting point for our analysis. This data has already been aligned to the mouse genome. The command line tool featureCounts [@Liao2014] was used to count reads mapped to mouse genes from Refseq annotation (see [@Fu2015] for details).
 
+<!---LEARNR CHALLENGES ALL-->
+
+You can try out the code challenges without needing to install anything. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenges_all/)
+
+<!---------------->
+
 
 ## Data files
 
