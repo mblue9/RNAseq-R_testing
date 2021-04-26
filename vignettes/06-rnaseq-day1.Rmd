@@ -265,10 +265,6 @@ plot(myCPM[,1],countdata[,1],ylim=c(0,50),xlim=c(0,3))
 abline(v=0.5)
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge1.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
@@ -282,7 +278,6 @@ HINT: use the `col` parameter.
 
 Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge1/)
-
 
 <!---------------->
 
@@ -438,11 +433,6 @@ What is the second greatest source of variation in the data?
 
 </div>  
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge2.Rdata")
-```
-
-
 <br />
 
 <div id="challenge">
@@ -454,7 +444,8 @@ HINT: use `pch` argument. Try `pch=16` and see what happens.
 3. Change the plotting characters such that basal samples have the value `1` and luminal samples have the value `4`. Colour by status (lactate, pregnant, virgin)
 </div>
 
-<!---LEARNR CHALLENGE 1-->
+<!---LEARNR CHALLENGE 2-->
+
 Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge2/)
 
@@ -542,10 +533,6 @@ heatmap.2(highly_variable_lcpm,col=rev(morecols(50)),trace="none", main="Top 500
 dev.off()
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge3.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
@@ -553,6 +540,13 @@ save.image("challenge3.Rdata")
 2. Change the sample names to `group` using the `labCol` argument
 3. Redo the heatmap using the top 500 LEAST variable genes.
 </div>
+
+<!---LEARNR CHALLENGE 3-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge3/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -621,15 +615,18 @@ plotMD(y,column = 11)
 abline(h=0,col="grey")
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge4.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
 Plot the biased and unbiased MD plots side by side for the same sample to see the before and after TMM normalisation effect.
 </div>
+
+<!---LEARNR CHALLENGE 4-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge4/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -698,12 +695,8 @@ v
 names(v)
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge5.Rdata")
-```
-
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Discussion**
 
 1. What is in the `targets` slot of `v` and what does it correspond to in `y`?
 2. What are the dimensions of the `weights` slot in `v`?
@@ -772,9 +765,6 @@ summa.fit <- decideTests(fit.cont)
 summary(summa.fit)
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge6.Rdata")
-```
 
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
@@ -784,6 +774,13 @@ save.image("challenge6.Rdata")
 (HINT: type `?vennDiagram`).
 Can you show the overlap of differentially expressed genes between the two comparisons? How many genes are commonly differentially expressed?
 </div>
+
+<!---LEARNR CHALLENGE 5-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge5/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -835,15 +832,18 @@ plotMD(fit.cont,coef=1,status=summa.fit[,"B.PregVsLac"], values = c(-1, 1), hl.c
 volcanoplot(fit.cont,coef=1,highlight=100,names=fit.cont$genes$SYMBOL, main="B.PregVsLac")
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge7.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
 Look at the MD plot and volcano plot for the second comparison, `L.PregVsLac`. Change the number of highlighted genes to 200 in the volcano plot.
 </div>
+
+<!---LEARNR CHALLENGE 6-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge6/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -870,15 +870,18 @@ stripchart(v$E["24117",]~group,vertical=TRUE,las=2,cex.axis=0.8,pch=16,cex=1.3,c
 
 Notice anything interesting about the expression of this gene?
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge8.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
 Take the top gene from the L.PregVsLactate comparison and make a stripchart of grouped expression as above. (Don't forget to change the title of the plot.)
 </div>
+
+<!---LEARNR CHALLENGE 7-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge7/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -928,10 +931,6 @@ plotMD(fit.treat,coef=2,status=res.treat[,"L.PregVsLac"], values=c(-1,1), hl.col
 abline(h=0,col="grey")
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge9.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
@@ -939,6 +938,13 @@ Change the cut-off so that we are interested in genes that change at least 50\% 
 
 HINT: what is the corresponding logFC value of 50\% fold change? Assume basal.pregnant is 50\% higher than basal.lactate
 </div>
+
+<!---LEARNR CHALLENGE 8-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge8/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -1004,15 +1010,18 @@ go_length <- goana(fit.cont,coef="B.PregVsLac",species="Mm",
 topGO(go_length, n=10)
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge10.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
 Perform GO analysis for the second comparison, "L.PregVsLac", taking into account gene length information
 </div>
+
+<!---LEARNR CHALLENGE 9-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge9/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -1076,10 +1085,6 @@ You can write out the camera results to a csv file to open in Excel.
 write.csv(gst.camera,file="gst_BPregVsLac.csv")
 ```
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge11.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
@@ -1087,6 +1092,13 @@ save.image("challenge11.Rdata")
 2. Run `camera` on a different set of MSigDB gene sets, the hallmark datasets, `mouse_H_v5.rdata`.
 You will need to load in the hallmark gene sets. Call the object `Mm.H`.
 </div>
+
+<!---LEARNR CHALLENGE 10-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge10/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -1129,16 +1141,19 @@ myc.rst[1:15,]
 
 Each row corresponds to a single gene set. The NGenes column gives the number of genes in each set. The PropDown and PropUp columns contain the proportions of genes in the set that are down- and up-regulated, respectively, with absolute fold changes greater than 2. The net direction of change is determined from the significance of changes in each direction, and is shown in the Direction column. The PValue provides evidence for whether the majority of genes in the set are DE in the specified direction, whereas the PValue.Mixed tests for differential expression in any direction. FDRs are computed from the corresponding p-values across all sets.
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge12.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
 1. Test whether the MYC signalling pathways tend to be differentially expressed between luminal pregnant vs lactating (the second contrast).
 2. Look for gene sets containing "WNT" in the name and see whether they tend to be differentially expressed in basal pregnant vs lactating.
 </div>
+
+<!---LEARNR CHALLENGE 11-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge11/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
@@ -1183,10 +1198,6 @@ barcodeplot(fit.cont$t[,1], index=c2.ind[["DANG_REGULATED_BY_MYC_UP"]], main="T-
 
 Here, genes are represented by bars and are ranked from left to right by decreasing log-fold change or t-statistic. This forms the barcode-like pattern. The line above the barcode shows the relative local enrichment of the vertical bars in each part of the plot. The barcodeplot shows that the genes in this gene set tend to be up-regulated between pregnant and lactating in basal cells.
 
-```{r include=FALSE, eval=FALSE}
-save.image("challenge13.Rdata")
-```
-
 <div id="challenge">
 <i class="fas fa-pencil-alt"></i> **Challenge**
 
@@ -1195,6 +1206,13 @@ save.image("challenge13.Rdata")
 3. You can put two gene sets on one plot, for example a set that is up-regulated and one that is down-regulated,
 by adding a gene set to the `index2` argument. Produce a barcodeplot with two sets of your choosing.
 </div>
+
+<!---LEARNR CHALLENGE 12-->
+
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+[![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge12/)
+
+<!---------------->
 
 <details>
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
