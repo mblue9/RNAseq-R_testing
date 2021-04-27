@@ -3,6 +3,7 @@ url: https://mblue9.github.io/RNAseq-R_testing/
 template:
   params:
     bootswatch: flatly
+    ganalytics: UA-195407310-1
 
 home:
   title: "RNA-seq analysis in R"
