@@ -1,0 +1,13 @@
+---
+title: "RNA-seq analysis in R"
+subtitle: RNA-seq basics
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document:
+---
+
+<object data="../slides/RNASeq_basics.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="../slides/RNASeq_basics.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../slides/RNASeq_basics.pdf">Download PDF</a>.</p>
+    </embed>
+</object>

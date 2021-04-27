@@ -1,0 +1,13 @@
+---
+title: "RNA-seq analysis in R"
+subtitle: Gene set testing
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document:
+---
+
+<object data="../slides/Gene_set_testing.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="../slides/Gene_set_testing.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../slides/Gene_set_testing.pdf">Download PDF</a>.</p>
+    </embed>
+</object>

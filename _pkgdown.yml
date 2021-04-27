@@ -21,6 +21,16 @@ navbar:
       href: articles/06-rnaseq-day1.html
     - text: Applying RNA-seq
       href: articles/08-applying-rnaseq.html
+    - text: Slides
+      menu:
+        - text: RNA-seq basics
+          href: articles/slides-01-rnaseq-basics.Rmd
+        - text: Filtering and QC
+          href: articles/slides-02-rnaseq-filtering-qc.Rmd
+        - text: Differential expression analysis
+          href: articles/slides-03-differential-expression-analysis.Rmd
+        - text: Gene set testing
+          href: articles/slides-04-gene-set-testing.Rmd
 
   right:
    - icon: fa-home
