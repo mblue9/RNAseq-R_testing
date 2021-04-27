@@ -90,7 +90,7 @@
             <h3 class="subtitle">Differential expression analysis</h3>
                         <h4 class="author">Maria A Doyle, Harriet Dashnow, Jovana Maksimovic, Anna S Trigos, Shian Su, Charity W Law, Matthew E Ritchie, Belinda Phipson</h4>
             
-            <h4 class="date">26 April 2021</h4>
+            <h4 class="date">27 April 2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/mblue9/RNAseq-R/blob/master/vignettes/06-rnaseq-day1.Rmd"><code>vignettes/06-rnaseq-day1.Rmd</code></a></small>
       <div class="hidden name"><code>06-rnaseq-day1.Rmd</code></div>
@@ -128,8 +128,12 @@
 <h2 class="hasAnchor">
 <a href="#mouse-mammary-gland-dataset" class="anchor"></a>Mouse mammary gland dataset</h2>
 <p>The data for this tutorial comes from a paper by <span class="citation">(Fu et al. 2015)</span>. Both the raw data (sequence reads) and processed data (counts) can be downloaded from Gene Expression Omnibus database (GEO) under accession number <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60450">GSE60450</a>. This study examines the expression profiles of basal stem-cell enriched cells (B) and committed luminal cells (L) in the mammary gland of virgin, pregnant and lactating mice. Six groups are present, with one for each combination of cell type and mouse status. Each group contains two biological replicates. We will first use the counts file as a starting point for our analysis. This data has already been aligned to the mouse genome. The command line tool featureCounts <span class="citation">(Liao, Smyth, and Shi 2014)</span> was used to count reads mapped to mouse genes from Refseq annotation (see <span class="citation">(Fu et al. 2015)</span> for details).</p>
+</div>
+<div id="interactive-mode" class="section level2">
+<h2 class="hasAnchor">
+<a href="#interactive-mode" class="anchor"></a>Interactive mode</h2>
 <!---LEARNR CHALLENGES ALL-->
-<p>You can try out the code challenges without needing to install anything. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.<br><a href="https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenges_all/"><img src="http://mybinder.org/badge_logo.svg" alt="Binder"></a></p>
+<p>You can try out the code, without needing to install anything, through the interactive challenges option. To access the file containing all challenges, right-click on the launch button below and open in a new tab. Takes a few seconds to launch.<br><a href="https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenges_all/"><img src="http://mybinder.org/badge_logo.svg" alt="Binder"></a></p>
 <!---------------->
 </div>
 <div id="data-files" class="section level2">
@@ -1700,52 +1704,52 @@ What is the second greatest source of variation in the data?</p>
 <span class="va">myc.rst</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">15</span>,<span class="op">]</span></code></pre></div>
 <pre><code>##                                                 NGenes   PropDown    PropUp
 ## DANG_MYC_TARGETS_UP                                159 0.11949686 0.7106918
-## CAIRO_PML_TARGETS_BOUND_BY_MYC_UP                   28 0.07142857 0.6785714
+## SCHUHMACHER_MYC_TARGETS_UP                          99 0.12121212 0.6868687
 ## DANG_REGULATED_BY_MYC_UP                            89 0.12359551 0.6741573
-## PID_MYC_ACTIV_PATHWAY                              101 0.15841584 0.6237624
-## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_UP         64 0.14062500 0.5781250
+## SCHLOSSER_MYC_TARGETS_REPRESSED_BY_SERUM           191 0.12565445 0.6020942
 ## KIM_MYC_AMPLIFICATION_TARGETS_UP                   227 0.16740088 0.4977974
 ## BILD_MYC_ONCOGENIC_SIGNATURE                       286 0.27622378 0.4650350
 ## BENPORATH_MYC_TARGETS_WITH_EBOX                    291 0.23024055 0.4295533
 ## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_UP    101 0.18811881 0.4059406
+## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_DN    136 0.36029412 0.2132353
 ## ELLWOOD_MYC_TARGETS_UP                              19 0.10526316 0.3157895
 ## COLLER_MYC_TARGETS_UP                               26 0.07692308 0.7692308
-## SCHLOSSER_MYC_AND_SERUM_RESPONSE_SYNERGY            46 0.19565217 0.4782609
-## LEE_LIVER_CANCER_MYC_UP                             59 0.28813559 0.5084746
-## CAIRO_PML_TARGETS_BOUND_BY_MYC_DN                   24 0.45833333 0.2083333
-## KIM_MYC_AMPLIFICATION_TARGETS_DN                   164 0.39634146 0.2195122
-##                                                 Direction PValue        FDR
-## DANG_MYC_TARGETS_UP                                    Up  0.001 0.00215000
-## CAIRO_PML_TARGETS_BOUND_BY_MYC_UP                      Up  0.001 0.00215000
-## DANG_REGULATED_BY_MYC_UP                               Up  0.001 0.00215000
-## PID_MYC_ACTIV_PATHWAY                                  Up  0.001 0.00215000
-## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_UP            Up  0.001 0.00215000
-## KIM_MYC_AMPLIFICATION_TARGETS_UP                       Up  0.001 0.00215000
-## BILD_MYC_ONCOGENIC_SIGNATURE                           Up  0.001 0.00215000
-## BENPORATH_MYC_TARGETS_WITH_EBOX                        Up  0.001 0.00215000
-## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_UP        Up  0.001 0.00215000
-## ELLWOOD_MYC_TARGETS_UP                                 Up  0.001 0.00215000
-## COLLER_MYC_TARGETS_UP                                  Up  0.002 0.00537500
-## SCHLOSSER_MYC_AND_SERUM_RESPONSE_SYNERGY               Up  0.002 0.00537500
-## LEE_LIVER_CANCER_MYC_UP                                Up  0.003 0.00671875
-## CAIRO_PML_TARGETS_BOUND_BY_MYC_DN                    Down  0.003 0.00671875
-## KIM_MYC_AMPLIFICATION_TARGETS_DN                     Down  0.003 0.00671875
+## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_DN         57 0.08771930 0.7543860
+## CAIRO_PML_TARGETS_BOUND_BY_MYC_UP                   28 0.07142857 0.6785714
+## PID_MYC_ACTIV_PATHWAY                              101 0.15841584 0.6237624
+## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_UP         64 0.14062500 0.5781250
+##                                                 Direction PValue         FDR
+## DANG_MYC_TARGETS_UP                                    Up  0.001 0.002150000
+## SCHUHMACHER_MYC_TARGETS_UP                             Up  0.001 0.002150000
+## DANG_REGULATED_BY_MYC_UP                               Up  0.001 0.002150000
+## SCHLOSSER_MYC_TARGETS_REPRESSED_BY_SERUM               Up  0.001 0.002150000
+## KIM_MYC_AMPLIFICATION_TARGETS_UP                       Up  0.001 0.002150000
+## BILD_MYC_ONCOGENIC_SIGNATURE                           Up  0.001 0.002150000
+## BENPORATH_MYC_TARGETS_WITH_EBOX                        Up  0.001 0.002150000
+## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_UP        Up  0.001 0.002150000
+## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_DN      Down  0.001 0.002150000
+## ELLWOOD_MYC_TARGETS_UP                                 Up  0.001 0.002150000
+## COLLER_MYC_TARGETS_UP                                  Up  0.002 0.003794118
+## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_DN            Up  0.002 0.003794118
+## CAIRO_PML_TARGETS_BOUND_BY_MYC_UP                      Up  0.002 0.003794118
+## PID_MYC_ACTIV_PATHWAY                                  Up  0.002 0.003794118
+## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_UP            Up  0.002 0.003794118
 ##                                                 PValue.Mixed FDR.Mixed
 ## DANG_MYC_TARGETS_UP                                    0.001     0.001
-## CAIRO_PML_TARGETS_BOUND_BY_MYC_UP                      0.001     0.001
+## SCHUHMACHER_MYC_TARGETS_UP                             0.001     0.001
 ## DANG_REGULATED_BY_MYC_UP                               0.001     0.001
-## PID_MYC_ACTIV_PATHWAY                                  0.001     0.001
-## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_UP            0.001     0.001
+## SCHLOSSER_MYC_TARGETS_REPRESSED_BY_SERUM               0.001     0.001
 ## KIM_MYC_AMPLIFICATION_TARGETS_UP                       0.001     0.001
 ## BILD_MYC_ONCOGENIC_SIGNATURE                           0.001     0.001
 ## BENPORATH_MYC_TARGETS_WITH_EBOX                        0.001     0.001
 ## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_UP        0.001     0.001
-## ELLWOOD_MYC_TARGETS_UP                                 0.001     0.001
+## ACOSTA_PROLIFERATION_INDEPENDENT_MYC_TARGETS_DN        0.001     0.001
+## ELLWOOD_MYC_TARGETS_UP                                 0.002     0.002
 ## COLLER_MYC_TARGETS_UP                                  0.002     0.002
-## SCHLOSSER_MYC_AND_SERUM_RESPONSE_SYNERGY               0.001     0.001
-## LEE_LIVER_CANCER_MYC_UP                                0.001     0.001
-## CAIRO_PML_TARGETS_BOUND_BY_MYC_DN                      0.001     0.001
-## KIM_MYC_AMPLIFICATION_TARGETS_DN                       0.001     0.001</code></pre>
+## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_DN            0.001     0.001
+## CAIRO_PML_TARGETS_BOUND_BY_MYC_UP                      0.001     0.001
+## PID_MYC_ACTIV_PATHWAY                                  0.002     0.002
+## SCHLOSSER_MYC_TARGETS_AND_SERUM_RESPONSE_UP            0.002     0.002</code></pre>
 <p>Each row corresponds to a single gene set. The NGenes column gives the number of genes in each set. The PropDown and PropUp columns contain the proportions of genes in the set that are down- and up-regulated, respectively, with absolute fold changes greater than 2. The net direction of change is determined from the significance of changes in each direction, and is shown in the Direction column. The PValue provides evidence for whether the majority of genes in the set are DE in the specified direction, whereas the PValue.Mixed tests for differential expression in any direction. FDRs are computed from the corresponding p-values across all sets.</p>
 <div id="challenge">
 <p><i class="fas fa-pencil-alt"></i> <strong>Challenge</strong></p>
@@ -1759,7 +1763,6 @@ What is the second greatest source of variation in the data?</p>
 <!---------------->
 <details><summary><i class="far fa-eye"></i> <strong>Solution</strong>
 </summary><pre class="solution"><code>##                                     NGenes  PropDown    PropUp Direction PValue
-## ODONNELL_TARGETS_OF_MYC_AND_TFRC_DN     54 0.6481481 0.1481481      Down  0.001
 ## DANG_MYC_TARGETS_DN                     43 0.2325581 0.5813953        Up  0.001
 ## PID_MYC_PATHWAY                         35 0.2000000 0.5428571        Up  0.001
 ## ELLWOOD_MYC_TARGETS_DN                  61 0.5409836 0.2622951      Down  0.001
@@ -1767,156 +1770,157 @@ What is the second greatest source of variation in the data?</p>
 ## BILD_MYC_ONCOGENIC_SIGNATURE           286 0.2902098 0.4195804        Up  0.001
 ## PID_MYC_REPRESS_PATHWAY                 93 0.2150538 0.3978495        Up  0.001
 ## ELLWOOD_MYC_TARGETS_UP                  19 0.2105263 0.3684211        Up  0.001
-## ODONNELL_TARGETS_OF_MYC_AND_TFRC_UP    137 0.3576642 0.2262774      Down  0.001
+## ODONNELL_TARGETS_OF_MYC_AND_TFRC_DN     54 0.6481481 0.1481481      Down  0.002
+## SCHUHMACHER_MYC_TARGETS_UP              99 0.4646465 0.3131313      Down  0.002
+## ALFANO_MYC_TARGETS                     365 0.2794521 0.4027397        Up  0.002
+## ODONNELL_TARGETS_OF_MYC_AND_TFRC_UP    137 0.3576642 0.2262774      Down  0.002
+## YU_MYC_TARGETS_UP                       47 0.7021277 0.1063830      Down  0.004
 ## LEE_LIVER_CANCER_MYC_TGFA_DN            63 0.3650794 0.3492063      Down  0.004
-## ALFANO_MYC_TARGETS                     365 0.2794521 0.4027397        Up  0.005
-## YU_MYC_TARGETS_UP                       47 0.7021277 0.1063830      Down  0.006
-## SCHUHMACHER_MYC_TARGETS_UP              99 0.4646465 0.3131313      Down  0.007
-## PID_MYC_ACTIV_PATHWAY                  101 0.2970297 0.4158416        Up  0.013
-## DANG_REGULATED_BY_MYC_DN               343 0.2565598 0.4169096        Up  0.016
+## PID_MYC_ACTIV_PATHWAY                  101 0.2970297 0.4158416        Up  0.006
+## DANG_REGULATED_BY_MYC_DN               343 0.2565598 0.4169096        Up  0.011
 ##                                             FDR PValue.Mixed FDR.Mixed
-## ODONNELL_TARGETS_OF_MYC_AND_TFRC_DN 0.002388889        0.001     0.001
-## DANG_MYC_TARGETS_DN                 0.002388889        0.001     0.001
-## PID_MYC_PATHWAY                     0.002388889        0.001     0.001
-## ELLWOOD_MYC_TARGETS_DN              0.002388889        0.001     0.001
-## BENPORATH_MYC_TARGETS_WITH_EBOX     0.002388889        0.001     0.001
-## BILD_MYC_ONCOGENIC_SIGNATURE        0.002388889        0.001     0.001
-## PID_MYC_REPRESS_PATHWAY             0.002388889        0.001     0.001
-## ELLWOOD_MYC_TARGETS_UP              0.002388889        0.001     0.001
-## ODONNELL_TARGETS_OF_MYC_AND_TFRC_UP 0.002388889        0.001     0.001
-## LEE_LIVER_CANCER_MYC_TGFA_DN        0.015050000        0.001     0.001
-## ALFANO_MYC_TARGETS                  0.017590909        0.001     0.001
-## YU_MYC_TARGETS_UP                   0.019708333        0.001     0.001
-## SCHUHMACHER_MYC_TARGETS_UP          0.021500000        0.001     0.001
-## PID_MYC_ACTIV_PATHWAY               0.038392857        0.001     0.001
-## DANG_REGULATED_BY_MYC_DN            0.044433333        0.001     0.001</code></pre>
+## DANG_MYC_TARGETS_DN                 0.003071429        0.001     0.001
+## PID_MYC_PATHWAY                     0.003071429        0.001     0.001
+## ELLWOOD_MYC_TARGETS_DN              0.003071429        0.001     0.001
+## BENPORATH_MYC_TARGETS_WITH_EBOX     0.003071429        0.001     0.001
+## BILD_MYC_ONCOGENIC_SIGNATURE        0.003071429        0.001     0.001
+## PID_MYC_REPRESS_PATHWAY             0.003071429        0.001     0.001
+## ELLWOOD_MYC_TARGETS_UP              0.003071429        0.001     0.001
+## ODONNELL_TARGETS_OF_MYC_AND_TFRC_DN 0.005863636        0.001     0.001
+## SCHUHMACHER_MYC_TARGETS_UP          0.005863636        0.001     0.001
+## ALFANO_MYC_TARGETS                  0.005863636        0.001     0.001
+## ODONNELL_TARGETS_OF_MYC_AND_TFRC_UP 0.005863636        0.001     0.001
+## YU_MYC_TARGETS_UP                   0.011576923        0.001     0.001
+## LEE_LIVER_CANCER_MYC_TGFA_DN        0.011576923        0.001     0.001
+## PID_MYC_ACTIV_PATHWAY               0.016892857        0.001     0.001
+## DANG_REGULATED_BY_MYC_DN            0.030100000        0.001     0.001</code></pre>
 <pre class="solution"><code>##                                                                                   NGenes
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                               16
 ## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING              6
-## PID_WNT_CANONICAL_PATHWAY                                                             29
 ## PID_WNT_NONCANONICAL_PATHWAY                                                          47
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                        91
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                               16
+## PID_WNT_CANONICAL_PATHWAY                                                             29
 ## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                    11
 ## BIOCARTA_WNT_PATHWAY                                                                  41
-## KEGG_WNT_SIGNALING_PATHWAY                                                           151
 ## WILLERT_WNT_SIGNALING                                                                 38
+## KEGG_WNT_SIGNALING_PATHWAY                                                           151
 ## PID_WNT_SIGNALING_PATHWAY                                                             29
 ## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                                   39
 ## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                                9
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                        18
 ## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                                  227
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                        18
 ## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS     18
 ##                                                                                    PropDown
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                           0.2500000
 ## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING         0.1666667
-## PID_WNT_CANONICAL_PATHWAY                                                         0.4482759
 ## PID_WNT_NONCANONICAL_PATHWAY                                                      0.4255319
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                    0.2087912
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                           0.2500000
+## PID_WNT_CANONICAL_PATHWAY                                                         0.4482759
 ## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                0.4545455
 ## BIOCARTA_WNT_PATHWAY                                                              0.2926829
-## KEGG_WNT_SIGNALING_PATHWAY                                                        0.3642384
 ## WILLERT_WNT_SIGNALING                                                             0.2631579
+## KEGG_WNT_SIGNALING_PATHWAY                                                        0.3642384
 ## PID_WNT_SIGNALING_PATHWAY                                                         0.2758621
 ## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                               0.4102564
 ## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                           0.2222222
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                    0.3888889
 ## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                               0.3083700
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                    0.3888889
 ## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS 0.3888889
 ##                                                                                       PropUp
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                           0.62500000
 ## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING         0.50000000
-## PID_WNT_CANONICAL_PATHWAY                                                         0.13793103
 ## PID_WNT_NONCANONICAL_PATHWAY                                                      0.14893617
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                    0.38461538
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                           0.62500000
+## PID_WNT_CANONICAL_PATHWAY                                                         0.13793103
 ## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                0.09090909
 ## BIOCARTA_WNT_PATHWAY                                                              0.36585366
-## KEGG_WNT_SIGNALING_PATHWAY                                                        0.24503311
 ## WILLERT_WNT_SIGNALING                                                             0.47368421
+## KEGG_WNT_SIGNALING_PATHWAY                                                        0.24503311
 ## PID_WNT_SIGNALING_PATHWAY                                                         0.31034483
 ## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                               0.25641026
 ## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                           0.33333333
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                    0.22222222
 ## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                               0.33039648
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                    0.22222222
 ## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS 0.33333333
 ##                                                                                   Direction
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                                  Up
 ## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING                Up
-## PID_WNT_CANONICAL_PATHWAY                                                              Down
 ## PID_WNT_NONCANONICAL_PATHWAY                                                           Down
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                           Up
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                                  Up
+## PID_WNT_CANONICAL_PATHWAY                                                              Down
 ## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                     Down
 ## BIOCARTA_WNT_PATHWAY                                                                     Up
-## KEGG_WNT_SIGNALING_PATHWAY                                                             Down
 ## WILLERT_WNT_SIGNALING                                                                    Up
+## KEGG_WNT_SIGNALING_PATHWAY                                                             Down
 ## PID_WNT_SIGNALING_PATHWAY                                                                Up
 ## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                                    Down
 ## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                                  Up
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                         Down
 ## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                                      Up
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                         Down
 ## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS        Up
 ##                                                                                   PValue
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                            0.001
 ## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING          0.001
-## PID_WNT_CANONICAL_PATHWAY                                                          0.001
 ## PID_WNT_NONCANONICAL_PATHWAY                                                       0.001
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                     0.001
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                            0.002
-## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                 0.007
-## BIOCARTA_WNT_PATHWAY                                                               0.019
-## KEGG_WNT_SIGNALING_PATHWAY                                                         0.019
-## WILLERT_WNT_SIGNALING                                                              0.041
-## PID_WNT_SIGNALING_PATHWAY                                                          0.052
-## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                                0.070
-## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                            0.098
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                     0.213
-## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                                0.249
-## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS  0.329
+## PID_WNT_CANONICAL_PATHWAY                                                          0.003
+## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                 0.016
+## BIOCARTA_WNT_PATHWAY                                                               0.017
+## WILLERT_WNT_SIGNALING                                                              0.023
+## KEGG_WNT_SIGNALING_PATHWAY                                                         0.025
+## PID_WNT_SIGNALING_PATHWAY                                                          0.044
+## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                                0.069
+## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                            0.076
+## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                                0.238
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                     0.242
+## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS  0.294
 ##                                                                                          FDR
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                           0.00275000
 ## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING         0.00275000
-## PID_WNT_CANONICAL_PATHWAY                                                         0.00275000
 ## PID_WNT_NONCANONICAL_PATHWAY                                                      0.00275000
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                    0.00275000
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                           0.00660000
-## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                0.02383333
-## BIOCARTA_WNT_PATHWAY                                                              0.05087500
-## KEGG_WNT_SIGNALING_PATHWAY                                                        0.05087500
-## WILLERT_WNT_SIGNALING                                                             0.09900000
-## PID_WNT_SIGNALING_PATHWAY                                                         0.11330000
-## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                               0.13900000
-## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                           0.17875000
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                    0.35961538
-## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                               0.39050000
-## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS 0.48180000
+## PID_WNT_CANONICAL_PATHWAY                                                         0.01100000
+## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                0.05185714
+## BIOCARTA_WNT_PATHWAY                                                              0.05185714
+## WILLERT_WNT_SIGNALING                                                             0.05988889
+## KEGG_WNT_SIGNALING_PATHWAY                                                        0.05988889
+## PID_WNT_SIGNALING_PATHWAY                                                         0.09570000
+## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                               0.13700000
+## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                           0.13841667
+## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                               0.37950000
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                    0.37950000
+## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS 0.43046667
 ##                                                                                   PValue.Mixed
-## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING                0.001
-## PID_WNT_CANONICAL_PATHWAY                                                                0.001
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                                  0.001
+## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING                0.002
 ## PID_WNT_NONCANONICAL_PATHWAY                                                             0.001
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                           0.001
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                                  0.001
-## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                       0.007
-## BIOCARTA_WNT_PATHWAY                                                                     0.001
-## KEGG_WNT_SIGNALING_PATHWAY                                                               0.001
+## PID_WNT_CANONICAL_PATHWAY                                                                0.001
+## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                       0.015
+## BIOCARTA_WNT_PATHWAY                                                                     0.002
 ## WILLERT_WNT_SIGNALING                                                                    0.001
-## PID_WNT_SIGNALING_PATHWAY                                                                0.002
+## KEGG_WNT_SIGNALING_PATHWAY                                                               0.001
+## PID_WNT_SIGNALING_PATHWAY                                                                0.001
 ## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                                      0.001
-## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                                  0.007
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                           0.001
+## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                                  0.009
 ## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                                      0.001
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                           0.002
 ## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS        0.001
 ##                                                                                   FDR.Mixed
-## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING             0.001
-## PID_WNT_CANONICAL_PATHWAY                                                             0.001
+## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                               0.001
+## REACTOME_RUNX1_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_WNT_SIGNALING             0.002
 ## PID_WNT_NONCANONICAL_PATHWAY                                                          0.001
 ## SANSOM_WNT_PATHWAY_REQUIRE_MYC                                                        0.001
-## REACTOME_REPRESSION_OF_WNT_TARGET_GENES                                               0.001
-## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                    0.007
-## BIOCARTA_WNT_PATHWAY                                                                  0.001
-## KEGG_WNT_SIGNALING_PATHWAY                                                            0.001
+## PID_WNT_CANONICAL_PATHWAY                                                             0.001
+## REACTOME_RNF_MUTANTS_SHOW_ENHANCED_WNT_SIGNALING_AND_PROLIFERATION                    0.015
+## BIOCARTA_WNT_PATHWAY                                                                  0.002
 ## WILLERT_WNT_SIGNALING                                                                 0.001
-## PID_WNT_SIGNALING_PATHWAY                                                             0.002
+## KEGG_WNT_SIGNALING_PATHWAY                                                            0.001
+## PID_WNT_SIGNALING_PATHWAY                                                             0.001
 ## REACTOME_SIGNALING_BY_WNT_IN_CANCER                                                   0.001
-## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                               0.007
-## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                        0.001
+## REACTOME_WNT_MEDIATED_ACTIVATION_OF_DVL                                               0.009
 ## REACTOME_TCF_DEPENDENT_SIGNALING_IN_RESPONSE_TO_WNT                                   0.001
+## REACTOME_WNT_LIGAND_BIOGENESIS_AND_TRAFFICKING                                        0.002
 ## REACTOME_NEGATIVE_REGULATION_OF_TCF_DEPENDENT_SIGNALING_BY_WNT_LIGAND_ANTAGONISTS     0.001</code></pre>
 </details><p><br></p>
 <p>Notes</p>
