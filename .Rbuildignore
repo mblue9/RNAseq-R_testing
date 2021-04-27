@@ -31,3 +31,4 @@ docs
 ref.bib
 ^.*\.Rproj$
 ^\.Rproj\.user$
+web/*
