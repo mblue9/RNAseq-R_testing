@@ -1243,4 +1243,11 @@ The session information describes the versions of R and of the packages that wer
 sessionInfo()
 ```
 
+
+# Feedback
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpAKZSLFcbXXgi3dZ1owUKo9osN9E-dJEVUhx9QOV93skOiA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+
 # References
+
