@@ -27,6 +27,4 @@ navbar:
      href: https://mblue9.github.io/RNAseq-R_testing
    - icon: fab fa-github
      href: https://github.com/mblue9/RNAseq-R_testing/
-   - icon: fab fa-docker
-     href: https://hub.docker.com/repository/docker/mblue9/RNAseq-R_testing/
     
