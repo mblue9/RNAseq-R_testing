@@ -3,7 +3,7 @@ title: "RNA-seq analysis in R"
 subtitle: Filtering and QC
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
-  html_document:
+  html_document
 ---
 
 <object data="../slides/RNASeq_filtering_qc.pdf" type="application/pdf" width="700px" height="700px">
