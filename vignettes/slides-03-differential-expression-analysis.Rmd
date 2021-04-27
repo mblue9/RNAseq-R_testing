@@ -6,8 +6,5 @@ output:
   html_document
 ---
 
-<object data="../slides/Differential_Expression_Analysis.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="../slides/Differential_Expression_Analysis.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../slides/Differential_Expression_Analysis.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/mblue9/RNAseq-R_testing/master/slides/Differential_Expression_Analysis.pdf&embedded=true" scrolling="yes" style="width:800px; height:600px;" frameborder="0"></iframe>
+

@@ -6,25 +6,6 @@ output:
   html_document
 ---
 
-<html>
-<body>
-    <object data="../slides/RNASeq_basics.pdf" type="application/pdf">
-        <embed src="../slides/RNASeq_basics.pdf" type="application/pdf" />
-    </object>
-</body>
-</html>
-
-<object data="../slides/RNASeq_basics.pdf" type="application/pdf" width="800px" height="800px">
-    <embed src="../slides/RNASeq_basics.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../slides/RNASeq_basics.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
-
-
-
-
-iframe
-
 <iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/mblue9/RNAseq-R_testing/master/slides/RNASeq_basics.pdf&embedded=true" scrolling="yes" style="width:800px; height:600px;" frameborder="0"></iframe>
 
 
