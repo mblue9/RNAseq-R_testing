@@ -3,7 +3,7 @@ url: https://mblue9.github.io/RNAseq-R/
 template:
   params:
     bootswatch: flatly
-    ganalytics: UA-93043521-1
+    ganalytics: UA-195407310-1
 
 home:
   title: "RNA-seq analysis in R"
@@ -16,19 +16,26 @@ navbar:
   title: ~
   type: default
   left:
-    - text: Workshop
+    - text: "R for RNA-seq"
+      href: articles/00-r-rstudio-intro.html
+    - text: "Differential expression analysis"
+      href: articles/06-rnaseq-day1.html
+    - text: "Applying RNA-seq"
+      href: articles/08-applying-rnaseq.html
+    - text: "Slides"
       menu:
-        - text: R for RNA-seq
-          href: articles/00-r-rstudio-intro.html
-        - text: Differential expression analysis
-          href: articles/06-rnaseq-day1.html
-        - text: Applying RNA-seq - Challenge
-          href: articles/08-applying-rnaseq.html
-        - text: Applying RNA-seq - Solutions
-          href: articles/09-applying-rnaseq-solutions.html
+        - text: "RNA-seq basics"
+          href: articles/slides-01-rnaseq-basics.html
+        - text: "Filtering and QC"
+          href: articles/slides-02-rnaseq-filtering-qc.html
+        - text: "Differential expression analysis"
+          href: articles/slides-03-differential-expression-analysis.html
+        - text: "Gene set testing"
+          href: articles/slides-04-gene-set-testing.html
+
   right:
+   - icon: fa-home
+     href: https://mblue9.github.io/RNAseq-R
    - icon: fab fa-github
      href: https://github.com/mblue9/RNAseq-R/
-   - icon: fab fa-docker
-     href: https://hub.docker.com/repository/docker/mblue9/RNAseq-R/
-    
+

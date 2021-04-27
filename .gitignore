@@ -12,9 +12,13 @@ _site
 .DS_Store
 .Rproj.user
 .Rhistory
+/docs/
 # Inputs and outputs of the RNAseq analysis
 data/*
 *.bam
 *.indel
 *.fastq.gz
 glimma-plots/*
+vignettes/md/*
+vignettes/mds/*
+vignettes/volcano/*

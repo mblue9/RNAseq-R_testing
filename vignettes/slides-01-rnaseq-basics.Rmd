@@ -1,0 +1,11 @@
+---
+title: "RNA-seq analysis in R"
+subtitle: RNA-seq basics
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document
+---
+
+<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/mblue9/RNAseq-R_testing/master/slides/RNASeq_basics.pdf&embedded=true" scrolling="yes" style="width:800px; height:600px;" frameborder="0"></iframe>
+
+
