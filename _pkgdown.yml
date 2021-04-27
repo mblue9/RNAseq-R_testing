@@ -24,13 +24,13 @@ navbar:
     - text: "Slides"
       menu:
         - text: "RNA-seq basics"
-          href: articles/slides-01-rnaseq-basics.Rmd
+          href: articles/slides-01-rnaseq-basics.html
         - text: "Filtering and QC"
-          href: articles/slides-02-rnaseq-filtering-qc.Rmd
+          href: articles/slides-02-rnaseq-filtering-qc.html
         - text: "Differential expression analysis"
-          href: articles/slides-03-differential-expression-analysis.Rmd
+          href: articles/slides-03-differential-expression-analysis.html
         - text: "Gene set testing"
-          href: articles/slides-04-gene-set-testing.Rmd
+          href: articles/slides-04-gene-set-testing.html
 
   right:
    - icon: fa-home
