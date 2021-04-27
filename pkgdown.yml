@@ -11,7 +11,7 @@ articles:
   slides-02-rnaseq-filtering-qc: slides-02-rnaseq-filtering-qc.html
   slides-03-differential-expression-analysis: slides-03-differential-expression-analysis.html
   slides-04-gene-set-testing: slides-04-gene-set-testing.html
-last_built: 2021-04-27T19:44Z
+last_built: 2021-04-27T20:07Z
 urls:
   reference: https://mblue9.github.io/RNAseq-R_testing//reference
   article: https://mblue9.github.io/RNAseq-R_testing//articles
