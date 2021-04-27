@@ -23,7 +23,7 @@ navbar:
       href: articles/08-applying-rnaseq.html
 
   right:
-   - icon: fab fa-home
+   - icon: fa-home
      href: https://mblue9.github.io/RNAseq-R_testing
    - icon: fab fa-github
      href: https://github.com/mblue9/RNAseq-R_testing/
