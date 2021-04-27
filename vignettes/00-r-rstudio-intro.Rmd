@@ -11,6 +11,8 @@ output:
     toc_depth: 2
 ---
 
+Here we cover some R skills that are particularly useful for RNAseq analysis, for example data frame manipulation, factors and subsetting using logical statements. If you are a more advanced R user, you may not need this.
+
 ## Acknowlegements
 
 Some of this material was adapted from
