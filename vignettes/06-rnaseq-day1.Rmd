@@ -275,7 +275,7 @@ abline(v=0.5)
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 1**
 
 1. Plot the counts-per-million versus counts for the second sample.
 2. Add a vertical line at 0.5 and a horizontal line at 10.
@@ -285,7 +285,7 @@ HINT: use the `col` parameter.
 
 <!---LEARNR CHALLENGE 1-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try this challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge1/)
 
 <!---------------->
@@ -294,8 +294,8 @@ Try the challenge interactively. Right-click on the launch button below and open
 <summary> <i class="far fa-eye"></i> **Solution**</summary>
 ```{r, class.output="solution", echo=FALSE}
 plot(myCPM[,2],countdata[,2],ylim=c(0,50),xlim=c(0,3))
-abline(v=0.5,col=4)
-abline(h=10,col=4)
+abline(v=0.5,col="blue")
+abline(h=10,col="blue")
 ```
 </details>
 <br />
@@ -445,12 +445,11 @@ What is the second greatest source of variation in the data?
 <br />
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 2**
 
-1. Redo the plots choosing your own colours.
-2. Change the plotting character to a symbol instead of the column names
-HINT: use `pch` argument. Try `pch=16` and see what happens.
-3. Change the plotting characters such that basal samples have the value `1` and luminal samples have the value `4`. Colour by status (lactate, pregnant, virgin)
+1.  Redo the plots with the colours for status (lactate, pregnant, virgin): `brewer.pal(3,"Dark2")`
+2. Change the plotting characters to symbols, such that basal samples have the value `1` and luminal samples have the value `4`. HINT: use `pch` argument.
+3. Add a legend for status at the top left and for cell type at the bottom.
 </div>
 
 <!---LEARNR CHALLENGE 2-->
@@ -543,7 +542,7 @@ dev.off()
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 3**
 
 1. Change the colour scheme to "PiYG" and redo the heatmap. Try `?RColorBrewer` and see what other colour schemes are available.
 2. Change the sample names to `group` using the `labCol` argument
@@ -625,7 +624,7 @@ abline(h=0,col="grey")
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 4**
 
 Plot the biased and unbiased MD plots side by side for the same sample to see the before and after TMM normalisation effect.
 </div>
@@ -776,7 +775,7 @@ summary(summa.fit)
 
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 5**
 
 1. Add another contrast to the contrasts matrix: `L.PregVsLac = luminal.pregnant - luminal.lactate` and re-run the code above. You should have two comparisons in `fit.cont` now.
 2. Check out the `vennDiagram` function
@@ -842,9 +841,10 @@ volcanoplot(fit.cont,coef=1,highlight=100,names=fit.cont$genes$SYMBOL, main="B.P
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 6**
 
-Look at the MD plot and volcano plot for the second comparison, `L.PregVsLac`. Change the number of highlighted genes to 200 in the volcano plot.
+1. Generate the MD plot and volcano plot for the second comparison, `L.PregVsLac`. 
+2. Change the number of highlighted genes to 200 in the volcano plot.
 </div>
 
 <!---LEARNR CHALLENGE 6-->
@@ -880,7 +880,7 @@ stripchart(v$E["24117",]~group,vertical=TRUE,las=2,cex.axis=0.8,pch=16,cex=1.3,c
 Notice anything interesting about the expression of this gene?
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 7**
 
 Take the top gene from the L.PregVsLactate comparison and make a stripchart of grouped expression as above. (Don't forget to change the title of the plot.)
 </div>
@@ -941,7 +941,7 @@ abline(h=0,col="grey")
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 8**
 
 Change the cut-off so that we are interested in genes that change at least 50\% on the fold change scale.
 
@@ -1020,7 +1020,7 @@ topGO(go_length, n=10)
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 9**
 
 Perform GO analysis for the second comparison, "L.PregVsLac", taking into account gene length information
 </div>
@@ -1095,7 +1095,7 @@ write.csv(gst.camera,file="gst_BPregVsLac.csv")
 ```
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 10**
 
 1. Run `camera` on the second contrast in the contrast matrix.
 2. Run `camera` on a different set of MSigDB gene sets, the hallmark datasets, `mouse_H_v5.rdata`.
@@ -1151,7 +1151,7 @@ myc.rst[1:15,]
 Each row corresponds to a single gene set. The NGenes column gives the number of genes in each set. The PropDown and PropUp columns contain the proportions of genes in the set that are down- and up-regulated, respectively, with absolute fold changes greater than 2. The net direction of change is determined from the significance of changes in each direction, and is shown in the Direction column. The PValue provides evidence for whether the majority of genes in the set are DE in the specified direction, whereas the PValue.Mixed tests for differential expression in any direction. FDRs are computed from the corresponding p-values across all sets.
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 11**
 
 1. Test whether the MYC signalling pathways tend to be differentially expressed between luminal pregnant vs lactating (the second contrast).
 2. Look for gene sets containing "WNT" in the name and see whether they tend to be differentially expressed in basal pregnant vs lactating.
@@ -1208,10 +1208,10 @@ barcodeplot(fit.cont$t[,1], index=c2.ind[["DANG_REGULATED_BY_MYC_UP"]], main="T-
 Here, genes are represented by bars and are ranked from left to right by decreasing log-fold change or t-statistic. This forms the barcode-like pattern. The line above the barcode shows the relative local enrichment of the vertical bars in each part of the plot. The barcodeplot shows that the genes in this gene set tend to be up-regulated between pregnant and lactating in basal cells.
 
 <div id="challenge">
-<i class="fas fa-pencil-alt"></i> **Challenge**
+<i class="fas fa-pencil-alt"></i> **Challenge 12**
 
 1. Produce a barcodeplot for luminal pregnant vs lactating for this gene set. Does the pattern of enrichment look as strong?
-2. Choose one of the Wnt signalling pathways and produce a barcode plot for both comparisons.
+2. Produce a barcode plot for the Wnt signalling pathways REACTOME_REPRESSION_OF_WNT_TARGET_GENES
 3. You can put two gene sets on one plot, for example a set that is up-regulated and one that is down-regulated,
 by adding a gene set to the `index2` argument. Produce a barcodeplot with two sets of your choosing.
 </div>
