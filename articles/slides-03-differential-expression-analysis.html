@@ -92,99 +92,31 @@
 
       
 
-      </header><script src="08-applying-rnaseq_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+      </header><script src="slides-03-differential-expression-analysis_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>RNA-seq analysis in R</h1>
-            <h3 class="subtitle">Analysis of Pasilla Knock-down Experiment in Drosophila</h3>
-                        <h4 class="author">Belinda Phipson and Jovana Maksimovic</h4>
+            <h3 class="subtitle">Differential expression analysis</h3>
             
             <h4 class="date">27 April 2021</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/mblue9/RNAseq-R/blob/master/vignettes/08-applying-rnaseq.Rmd"><code>vignettes/08-applying-rnaseq.Rmd</code></a></small>
-      <div class="hidden name"><code>08-applying-rnaseq.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/mblue9/RNAseq-R/blob/master/vignettes/slides-03-differential-expression-analysis.Rmd"><code>vignettes/slides-03-differential-expression-analysis.Rmd</code></a></small>
+      <div class="hidden name"><code>slides-03-differential-expression-analysis.Rmd</code></div>
 
     </div>
 
     
     
-<div id="data-files-needed" class="section level2">
-<h2 class="hasAnchor">
-<a href="#data-files-needed" class="anchor"></a>Data files needed</h2>
-<ul>
-<li><a href="https://ndownloader.figshare.com/files/5999835?private_link=e08e71c42f118dbe8be6">counts_Drosophila.txt</a></li>
-<li><a href="https://ndownloader.figshare.com/files/5999838?private_link=e08e71c42f118dbe8be6">SampleInfo_Drosophila.txt</a></li>
-</ul>
-<p>Available from <a href="https://figshare.com/s/e08e71c42f118dbe8be6">Figshare</a>.</p>
-</div>
-<div id="libraries-needed" class="section level2">
-<h2 class="hasAnchor">
-<a href="#libraries-needed" class="anchor"></a>Libraries needed</h2>
-<ul>
-<li>limma</li>
-<li>edgeR</li>
-<li>org.Dm.eg.db (annotation for Drosophila)</li>
-<li>gplots</li>
-<li>RColorBrewer</li>
-</ul>
-<p><strong>If you have your own dataset, make sure you have a counts matrix and the sample information. You can look for the annotation package for the species you’re studying on the <a href="http://bioconductor.org/packages/release/BiocViews.html#___AnnotationData">Bioconductor website</a>.</strong> (Search for “org.” to see the organism packages)</p>
-</div>
-<div id="introduction" class="section level2">
-<h2 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>The RNA-Seq data we will be analysing today comes from this published paper:</p>
-<p>Brooks, A.N., Yang, L., Duff, M.O., Hansen, K.D., Park, J.W., Dudoit, S., Brenner, S.E. and Graveley, B.R. (2011) Conservation of an rna regulatory map between drosophila and mammals. Genome Research, 21(2), 193-202.<br><a href="http://www.ncbi.nlm.nih.gov/pubmed/20921232" class="uri">http://www.ncbi.nlm.nih.gov/pubmed/20921232</a></p>
-<p>This is a publicly available dataset, deposited in the Short Read Archive. The RNA-sequence data are available from GEO under accession nos. GSM461176-GSM461181. The authors combined RNAi and RNASeq to identify exons regulated by Pasilla, the Drosophila melanogaster ortholog of mammalian NOVA1 and NOVA2. They showed that the RNA regulatory map of Pasilla and NOVA1/2 is highly conserved between insects and mammals. NOVA1 and NOVA2 are best known for being involved in alternative splicing. Cells from S2-DRSC, which is an embryonic cell line, were cultured and subjected to a treatment in order to knock-down Pasilla. The four untreated and three treated RNAi samples were used in the analysis. The treated samples had Pasilla knocked down by approximately 60% compared to the untreated samples. Some of the samples had undergone paired end sequencing while other samples were sequenced from one end only.</p>
-<p>The reads were aligned to the Drosophila reference genome, downloaded from Ensembl, using the tophat aligner. The reads were summarised at the gene-level using htseq-count, a function from the tool <a href="http://wwwhuber.embl.de/users/anders/HTSeq/doc/overview.html">HTSeq</a>.</p>
-<p>For the purpose of today’s workshop, we will be analysing the gene level counts.</p>
-</div>
-<div id="tasks" class="section level2">
-<h2 class="hasAnchor">
-<a href="#tasks" class="anchor"></a>Tasks</h2>
-<ul>
-<li><p>Importing the data into R</p></li>
-<li><p>Import in sample information file (if you have your own dataset, make a simple tab delimited file with sample information in Excel to read into R)</p></li>
-<li><p>Filtering out lowly expressed genes</p></li>
-<li>
-<p>Quality control</p>
-<ul>
-<li>Check library sizes</li>
-<li>Check boxplots of log2 cpm</li>
-<li>Check MDSplots</li>
-</ul>
-</li>
-<li><p>Hierarchical clustering with heatmap.2</p></li>
-<li><p>Normalisation</p></li>
-<li>
-<p>Testing for differential expression</p>
-<ul>
-<li>Set up appropriate design matrix</li>
-<li>voom transform the data</li>
-<li>Fit linear model and get DE genes</li>
-<li>Add annotation (different from day 1 - we will show you how)</li>
-</ul>
-</li>
-<li>
-<p>Plots after DE</p>
-<ul>
-<li>Check top gene that is DE between Treated and Untreated</li>
-<li>Check expression of <em>pasilla</em> (ensemble gene id: FBgn0261552)</li>
-<li>Mean-difference plot (plotMD)</li>
-<li>Volcano plot</li>
-</ul>
-</li>
-<li><p>Testing relative to a threshold</p></li>
-<li><p>Gene set testing with goana</p></li>
-<li><p>Try some interactive plots from Glimma and save the topTable output in a spreadsheet.</p></li>
-</ul>
-</div>
+<object data="../slides/Differential_Expression_Analysis.pdf" type="application/pdf" width="700px" height="700px">
+<embed src="../slides/Differential_Expression_Analysis.pdf"><p>
+This browser does not support PDFs. Please download the PDF to view it: <a href="../slides/Differential_Expression_Analysis.pdf">Download PDF</a>.
+</p>
+</embed></object>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 

@@ -18,4 +18,16 @@
   <url>
     <loc>https://mblue9.github.io/RNAseq-R_testing//articles/09-applying-rnaseq-solutions.html</loc>
   </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R_testing//articles/slides-01-rnaseq-basics.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R_testing//articles/slides-02-rnaseq-filtering-qc.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R_testing//articles/slides-03-differential-expression-analysis.html</loc>
+  </url>
+  <url>
+    <loc>https://mblue9.github.io/RNAseq-R_testing//articles/slides-04-gene-set-testing.html</loc>
+  </url>
 </urlset>
