@@ -6,7 +6,7 @@ output:
   html_document
 ---
 
-<object data="../slides/RNASeq_basics.pdf" type="application/pdf" width="700px" height="700px">
+<object data="../slides/RNASeq_basics.pdf" type="application/pdf" width="1000px" height="1000px">
     <embed src="../slides/RNASeq_basics.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="../slides/RNASeq_basics.pdf">Download PDF</a>.</p>
     </embed>
