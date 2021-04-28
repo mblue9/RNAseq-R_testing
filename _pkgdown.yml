@@ -18,7 +18,7 @@ navbar:
   left:
     - text: "R for RNA-seq"
       href: articles/00-r-rstudio-intro.html
-    - text: "Differential expression analysis"
+    - text: "RNA-seq analysis"
       href: articles/06-rnaseq-day1.html
     - text: "Applying RNA-seq"
       href: articles/08-applying-rnaseq.html

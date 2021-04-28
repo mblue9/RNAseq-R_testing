@@ -537,3 +537,5 @@ ResultsTable_small[match(my_genes, ResultsTable_small$SYMBOL), ]
 ```
 
 You can see they are in the same order as `my_genes`!
+
+Now we've seen some R basics we can head over to the [RNA-seq analysis tutorial](06-rnaseq-day1).
