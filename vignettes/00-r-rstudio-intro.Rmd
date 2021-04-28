@@ -13,7 +13,7 @@ output:
 
 # Introduction
 
-In this section we cover some R skills that are particularly useful for RNA-seq analysis, for example data frame manipulation, factors and subsetting using logical statements. If you are a more advanced R user, you may not need this.
+In this section we briefly cover some R basics and skills that are particularly useful for RNA-seq analysis, for example data frame manipulation, factors and subsetting using logical statements. If you are a more advanced R user, you may not need this. You can see more details on these topics in the Software Carpentry material listed in the [Supplementary lessons](index.html#supplementary-lessons).
 
 ## Acknowlegements
 
@@ -71,8 +71,8 @@ you just typed in `R` in your commandline environment.
 ## R Packages
 
 It is possible to add functions to R by writing a package, or by
-obtaining a package written by someone else. As of this writing, there
-are over 7,000 packages available on CRAN (the comprehensive R archive
+obtaining a package written by someone else. As of this writing (2021), there
+are over 17,000 packages available on CRAN (the comprehensive R archive
 network). R and RStudio have functionality for managing packages:
 
 * You can see what packages are installed by typing
@@ -84,9 +84,9 @@ network). R and RStudio have functionality for managing packages:
 * You can make a package available for use with `library(packagename)`
 
 For this workshop we will also be using packages from
-These can all be obtained from Bioconductor.
+These can all be obtained from [Bioconductor](https://www.bioconductor.org/). Bioconductor is the main repository for biology-focused R packages. As of 2021 it contains >1900 packages.
 
-Open RStudio and run the following commands to install packages from [Bioconductor](https://www.bioconductor.org/). These are installed slightly differently. For example, to install the package `limma`:
+Open RStudio and run the following commands to install packages from Bioconductor. These are installed slightly differently. For example, to install the package `limma`:
 
 ```{r, eval=FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -212,7 +212,7 @@ use the `mklink` command from the windows terminal.
 
 ## Save the data in the data directory
 
-*It is recommended to store your data in a `/data` folder in your project. However in this workshop we will also show you how you can import the data files directly from links.*
+*It is recommended to store your data in a `/data` folder in your project. However in this workshop we will also show you how you can import the data files directly from their web links.*
 Now we have a good directory structure we will now place/save the data file in the `data/` directory.
 
 Download the RNAseq data for this workshop.
