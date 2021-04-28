@@ -54,7 +54,7 @@ We will first use the counts file as a starting point for our analysis. This dat
 
 <!---LEARNR CHALLENGES ALL-->
 
-You can try out the code, without needing to install anything, through the interactive challenges option. To access the file containing all challenges, right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+You can try out the code, without needing to install anything, through the interactive challenges option. To access the file containing all challenges, right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenges_all/)
 
 <!---------------->
@@ -291,7 +291,7 @@ HINT: use the `col` parameter.
 
 <!---LEARNR CHALLENGE 1-->
 
-Try this challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try this challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge1/)
 
 <!---------------->
@@ -460,7 +460,7 @@ What is the second greatest source of variation in the data?
 
 <!---LEARNR CHALLENGE 2-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge2/)
 
 <!---------------->
@@ -558,7 +558,7 @@ dev.off()
 
 <!---LEARNR CHALLENGE 3-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge3/)
 
 <!---------------->
@@ -641,7 +641,7 @@ Plot the biased and unbiased MD plots side by side for the same sample to see th
 
 <!---LEARNR CHALLENGE 4-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge4/)
 
 <!---------------->
@@ -799,7 +799,7 @@ Can you show the overlap of differentially expressed genes between the two compa
 
 <!---LEARNR CHALLENGE 5-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge5/)
 
 <!---------------->
@@ -863,7 +863,7 @@ volcanoplot(fit.cont,coef=1,highlight=100,names=fit.cont$genes$SYMBOL, main="B.P
 
 <!---LEARNR CHALLENGE 6-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge6/)
 
 <!---------------->
@@ -902,7 +902,7 @@ Take the top gene from the L.PregVsLactate comparison and make a stripchart of g
 
 <!---LEARNR CHALLENGE 7-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge7/)
 
 <!---------------->
@@ -966,7 +966,7 @@ HINT: what is the corresponding logFC value of 50\% fold change? Assume basal.pr
 
 <!---LEARNR CHALLENGE 8-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge8/)
 
 <!---------------->
@@ -1046,7 +1046,7 @@ Perform GO analysis for the second comparison, "L.PregVsLac", taking into accoun
 
 <!---LEARNR CHALLENGE 9-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge9/)
 
 <!---------------->
@@ -1123,7 +1123,7 @@ You will need to load in the hallmark gene sets. Call the object `Mm.H`.
 
 <!---LEARNR CHALLENGE 10-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge10/)
 
 <!---------------->
@@ -1179,7 +1179,7 @@ Each row corresponds to a single gene set. The NGenes column gives the number of
 
 <!---LEARNR CHALLENGE 11-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge11/)
 
 <!---------------->
@@ -1239,7 +1239,7 @@ Here, genes are represented by bars and are ranked from left to right by decreas
 
 <!---LEARNR CHALLENGE 12-->
 
-Try the challenge interactively. Right-click on the launch button below and open in a new tab. Takes a few seconds to launch.  
+Try the challenge interactively. Right-click on the launch button below and open in a new tab. May take a minute to launch.  
 [![Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mblue9/RNAseq-R_learnr_binder/HEAD?urlpath=shiny/challenge12/)
 
 <!---------------->
