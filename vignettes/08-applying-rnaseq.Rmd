@@ -13,7 +13,7 @@ output:
 
 # Introduction
 
-This is where you can test applying the RNA-seq R analysis skills you have learned. There are some task given below. You could try on your own data or on the Drosophila dataset described below.
+This is where you can test applying the RNA-seq R analysis skills you have learned. There are some tasks given below. You could try on your own data or on the Drosophila dataset described below.
 
 ## Drosophila dataset
 
