@@ -23,6 +23,10 @@ Measuring gene expression on a genome-wide scale has become common practice over
 
 There are many steps involved in analysing an RNA-Seq experiment. Analysing an RNAseq experiment begins with sequencing reads. These are aligned to a reference genome, then the number of reads mapped to each gene can be counted. This results in a table of counts, which is what we perform statistical analyses on in R. While mapping and counting are important and necessary tasks, today we will be starting from the count data and getting stuck into analysis.
 
+## RNA-seq basics
+
+You can see the slides covering RNA-seq basics [here](articles/slides-01-rnaseq-basics.html).
+
 ## Acknowledgements
 
 This material was inspired by this [case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and quality control steps from this [material](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html).
@@ -238,6 +242,8 @@ y$genes <- ann
 
 
 # Filtering lowly expressed genes
+
+You can see the slides covering filtering and quality control [here](articles/slides-02-rnaseq-filtering-qc.html).
 
 Genes with very low counts across all libraries provide little evidence for differential expression and they interfere with some of the statistical approximations that are used later in the pipeline. They also add to the multiple testing burden when estimating false discovery rates, reducing power to detect differentially expressed genes. These genes should be filtered out prior to further analysis.
 
@@ -579,6 +585,7 @@ heatmap.2(least_variable_lcpm,col=rev(morecols(50)),trace="none", main="Top 500 
 <br />
 
 If we wanted to add more annotations, for example colours for both cell type and status, we can't easily do that with `heatmap.2`, but we could use the `aheatmap` function from the *NMF* package. We can specify which columns we want to use from sampleinfo in `annCol=` and coloured bars will be added for those.
+
 ```{r heatmap-aheatmap}
 mypalette <- brewer.pal(11,"RdYlBu")
 morecols <- colorRampPalette(mypalette)
@@ -660,6 +667,8 @@ abline(h=0,col="grey")
 
 
 # Differential expression with limma-voom
+
+You can see the slides covering differential expression analysis [here](articles/slides-03-differential-expression-analysis.html).
 
 Now that we are happy that we have normalised the data and that the quality looks good, we can continue to testing for differentially expressed genes. There are a number of packages to analyse RNA-Seq data. The *limma* package [@Ritchie2015] offers the `voom` function, which transforms the read counts into logCPMs while taking into account the mean-variance relationship in the data [@Law2014]. After vooming, users can apply a linear model to the voom transformed data to test for differentially expressed genes, using standard *limma* commands.
 
@@ -990,6 +999,8 @@ As with the volcano plot example above, this function creates an html page (./md
 
 
 # Gene Set Testing
+
+You can see the slides covering gene set testing [here](articles/slides-04-gene-set-testing.html).
 
 Sometimes there is quite a long list of differentially expressed genes to interpret after a differential expression analysis, and it is usually infeasible to go through the list one gene at a time trying to understand it's biological function. A common downstream procedure is gene set testing, which aims to understand which pathways/gene networks the differentially expressed genes are implicated in.
 
