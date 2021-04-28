@@ -11,24 +11,11 @@ output:
     toc_depth: 2
 ---
 
-## Data files needed
+# Introduction
 
-* [counts_Drosophila.txt](https://ndownloader.figshare.com/files/5999835?private_link=e08e71c42f118dbe8be6)
-* [SampleInfo_Drosophila.txt](https://ndownloader.figshare.com/files/5999838?private_link=e08e71c42f118dbe8be6)
+This is where you can test applying the RNA-seq R analysis skills you have learned. There are some task given below. You could try on your own data or on the Drosophila dataset described below.
 
-Available from [Figshare](https://figshare.com/s/e08e71c42f118dbe8be6).
-
-## Libraries needed
-
-* limma
-* edgeR
-* org.Dm.eg.db (annotation for Drosophila)
-* gplots
-* RColorBrewer
-
-**If you have your own dataset, make sure you have a counts matrix and the sample information. You can look for the annotation package for the species you're studying on the [Bioconductor website](http://bioconductor.org/packages/release/BiocViews.html#___AnnotationData).** (Search for "org." to see the organism packages)
-
-## Introduction
+## Drosophila dataset
 
 The RNA-Seq data we will be analysing today comes from this published paper:
 
@@ -59,6 +46,24 @@ The reads were summarised at the gene-level using
 htseq-count, a function from the tool [HTSeq](http://wwwhuber.embl.de/users/anders/HTSeq/doc/overview.html).
 
 For the purpose of today's workshop, we will be analysing the gene level counts.
+
+## Data files needed
+
+* [counts_Drosophila.txt](https://ndownloader.figshare.com/files/5999835?private_link=e08e71c42f118dbe8be6)
+* [SampleInfo_Drosophila.txt](https://ndownloader.figshare.com/files/5999838?private_link=e08e71c42f118dbe8be6)
+
+Available from [Figshare](https://figshare.com/s/e08e71c42f118dbe8be6).
+
+## Libraries needed
+
+* limma
+* edgeR
+* org.Dm.eg.db (annotation for Drosophila)
+* gplots
+* RColorBrewer
+
+**If you have your own dataset, make sure you have a counts matrix and the sample information. You can look for the annotation package for the species you're studying on the [Bioconductor website](http://bioconductor.org/packages/release/BiocViews.html#___AnnotationData).** (Search for "org." to see the organism packages)
+
 
 ## Tasks
 
