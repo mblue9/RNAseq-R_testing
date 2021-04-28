@@ -25,7 +25,7 @@ There are many steps involved in analysing an RNA-Seq experiment. Analysing an R
 
 ## RNA-seq basics
 
-You can see the slides covering RNA-seq basics [here](articles/slides-01-rnaseq-basics.html).
+You can see the slides covering RNA-seq basics [here](slides-01-rnaseq-basics.html).
 
 ## Acknowledgements
 
@@ -243,7 +243,7 @@ y$genes <- ann
 
 # Filtering lowly expressed genes
 
-You can see the slides covering filtering and quality control [here](articles/slides-02-rnaseq-filtering-qc.html).
+You can see the slides covering filtering and quality control [here](slides-02-rnaseq-filtering-qc.html).
 
 Genes with very low counts across all libraries provide little evidence for differential expression and they interfere with some of the statistical approximations that are used later in the pipeline. They also add to the multiple testing burden when estimating false discovery rates, reducing power to detect differentially expressed genes. These genes should be filtered out prior to further analysis.
 
@@ -668,7 +668,7 @@ abline(h=0,col="grey")
 
 # Differential expression with limma-voom
 
-You can see the slides covering differential expression analysis [here](articles/slides-03-differential-expression-analysis.html).
+You can see the slides covering differential expression analysis [here](slides-03-differential-expression-analysis.html).
 
 Now that we are happy that we have normalised the data and that the quality looks good, we can continue to testing for differentially expressed genes. There are a number of packages to analyse RNA-Seq data. The *limma* package [@Ritchie2015] offers the `voom` function, which transforms the read counts into logCPMs while taking into account the mean-variance relationship in the data [@Law2014]. After vooming, users can apply a linear model to the voom transformed data to test for differentially expressed genes, using standard *limma* commands.
 
@@ -1000,7 +1000,7 @@ As with the volcano plot example above, this function creates an html page (./md
 
 # Gene Set Testing
 
-You can see the slides covering gene set testing [here](articles/slides-04-gene-set-testing.html).
+You can see the slides covering gene set testing [here](slides-04-gene-set-testing.html).
 
 Sometimes there is quite a long list of differentially expressed genes to interpret after a differential expression analysis, and it is usually infeasible to go through the list one gene at a time trying to understand it's biological function. A common downstream procedure is gene set testing, which aims to understand which pathways/gene networks the differentially expressed genes are implicated in.
 
