@@ -6,4 +6,9 @@ output:
   html_document
 ---
 
-<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/mblue9/RNAseq-R_testing/master/slides/Gene_set_testing.pdf&embedded=true" scrolling="yes" style="width:800px; height:600px;" frameborder="0"></iframe>
+<iframe 
+    src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/mblue9/RNAseq-R_testing/master/slides/Gene_set_testing.pdf&embedded=true" 
+    scrolling="yes" 
+    style="width:760px; height:600px;" 
+    frameborder="0">
+</iframe>
