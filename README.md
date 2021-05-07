@@ -2,6 +2,14 @@
 
 In this workshop, you will be learning how to analyse RNA-seq count data, using R. This will include importing the data into R, quality control and performing differential expression analysis and gene set testing, with a focus on the limma-voom analysis workflow. You will learn how to generate common plots for analysis and visualisation of gene expression data, such as boxplots and heatmaps. You will also be learning how alignment and counting of raw RNA-seq data can be performed in R. This workshop is aimed at biologists interested in learning how to perform differential expression analysis of RNA-seq data when reference genomes are available. It was first taught [here](http://combine-australia.github.io/2016-05-11-RNAseq/).
 
+## Learning Objectives
+
+- Import RNA-seq count data into R
+- Assess quality of the data
+- Perform differential expression analysis 
+- Generate visualisations to summarise the results
+- Apply gene set testing
+
 ## Prerequisites
 
 Some basic R knowledge is assumed.
