@@ -11,7 +11,7 @@ minutes: 60
 
 Mapping reads to the genome is a very important task, and many different aligners are available, such as bowtie [@Langmead2012], topHat [@trapnell2009tophat], STAR [@Dobin2013] and Rsubread [@liao2013subread]. Rsubread is the only aligner that can run in R. Most mapping tasks require larger computers than an average laptop, so usually read mapping is done on a server in a Linux-like environment. However, for the purpose of this workshop, we will demonstrate how read alignment and counting can be performed using R. We will map a small subset of reads (1000) from each sample from our mouse lactation dataset [@Fu2015], and we will only be mapping to chromosome 1. This is so that everyone can have a go at alignment and counting using R. You can see more details on how these RNA-seq reads can be processed in this [Galaxy tutorial](https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-reads-to-counts/tutorial.html). 
 
-## Acknowledgements
+**Acknowledgements**
 
 This material was inspired by this [edgeR case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and this [Rsubread case study](http://bioinf.wehi.edu.au/RNAseqCaseStudy/).
 
@@ -47,7 +47,7 @@ We have provided the index files for chromosome 1 for the mouse genome build mm1
 
 First, let's load the Rsubread package into R.
 
-```{r}
+```{r message=FALSE}
 library(Rsubread)
 ```
 

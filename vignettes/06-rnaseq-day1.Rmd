@@ -27,7 +27,7 @@ There are many steps involved in analysing an RNA-Seq experiment. Analysing an R
 
 You can see the slides covering RNA-seq basics [here](slides-01-rnaseq-basics.html).
 
-## Acknowledgements
+**Acknowledgements**
 
 This material was inspired by this [case study]((http://www.statsci.org/smyth/pubs/QLedgeRPreprint.pdf)) by [@Lun2016] and quality control steps from this [material](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html).
 

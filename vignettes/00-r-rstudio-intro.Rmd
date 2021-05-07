@@ -15,7 +15,7 @@ output:
 
 In this section we briefly cover some R basics and skills that are particularly useful for RNA-seq analysis, for example data frame manipulation, factors and subsetting using logical statements. If you are a more advanced R user, you may not need this. You can see more details on these topics in the Software Carpentry material listed in the [Supplementary lessons](index.html#supplementary-lessons).
 
-## Acknowlegements
+**Acknowlegements**
 
 Some of this material was adapted from
 [Software Carpentry's R lessons](https://github.com/swcarpentry/r-novice-gapminder/)
