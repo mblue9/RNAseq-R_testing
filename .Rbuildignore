@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 .github
 Dockerfile
 ^_pkgdown\.yml$
@@ -31,3 +33,4 @@ docs
 ref.bib
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.github$
