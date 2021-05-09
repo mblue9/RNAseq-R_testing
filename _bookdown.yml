@@ -1,0 +1,8 @@
+delete_merged_file: true
+rmd_files: [
+    "index.Rmd", 
+    "vignettes/00-r-rstudio-intro.Rmd", 
+    "vignettes/06-rnaseq-day1.Rmd",
+    "vignettes/08-applying-rnaseq.Rmd"
+    ]
+

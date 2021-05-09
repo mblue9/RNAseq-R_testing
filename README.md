@@ -1,4 +1,13 @@
-# RNAseq analysis in R
+---
+knit: "bookdown::render_book"
+title: "RNAseq-R"
+author: "Maria Doyle..."
+github-repo: mblue9/RNAseq-R_testing
+site: bookdown::bookdown_site
+documentclass: book
+---
+
+# Introduction
 
 In this workshop, you will be learning how to analyse RNA-seq count data, using R. This will include importing the data into R, quality control and performing differential expression analysis and gene set testing, with a focus on the limma-voom analysis workflow. You will learn how to generate common plots for analysis and visualisation of gene expression data, such as boxplots and heatmaps. You will also be learning how alignment and counting of raw RNA-seq data can be performed in R. This workshop is aimed at biologists interested in learning how to perform differential expression analysis of RNA-seq data when reference genomes are available. It was first taught [here](http://combine-australia.github.io/2016-05-11-RNAseq/).
 

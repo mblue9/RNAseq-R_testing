@@ -1,7 +1,5 @@
 ---
 title: "RNA-seq analysis in R"
-subtitle: "Analysis of Pasilla Knock-down Experiment in Drosophila"
-author: "Belinda Phipson and Jovana Maksimovic"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 minutes: 120
 output: 
@@ -10,6 +8,8 @@ output:
     toc_float: yes
     toc_depth: 2
 ---
+
+# (PART) Applying RNA-seq {.unnumbered}
 
 # Introduction
 

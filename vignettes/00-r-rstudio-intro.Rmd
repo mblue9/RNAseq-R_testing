@@ -1,6 +1,5 @@
 ---
-title: RNA-seq analysis in R
-subtitle: R for RNAseq
+title: "RNA-seq analysis in R"
 author: "Harriet Dashnow"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 minutes: 40
@@ -10,6 +9,8 @@ output:
     toc_float: yes
     toc_depth: 2
 ---
+
+# (PART) R for RNA-seq {.unnumbered}
 
 # Introduction
 
@@ -107,7 +108,7 @@ eventually everything is a bit mixed together.
 Most people tend to organize their projects like this:
 
 ```{r, echo=FALSE}
-knitr::include_graphics("../inst/vignettes/bad_layout.png")
+knitr::include_graphics("inst/vignettes/bad_layout.png")
 ```
 
 There are many reasons why we should *ALWAYS* avoid this:
