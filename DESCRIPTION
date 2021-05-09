@@ -30,7 +30,8 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-    pkgdown
+    pkgdown,
+    bookdown
 Biarch: true
 biocViews: RNASeq, DifferentialExpression, GeneExpression, Normalization, Clustering, QualityControl, Sequencing, Transcription, Transcriptomics
 URL: https://mblue9.github.io/RNAseq-R/
