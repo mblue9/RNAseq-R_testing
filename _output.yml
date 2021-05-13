@@ -1,4 +1,4 @@
 bookdown::bs4_book:
   theme:
-    primary: "#0269A4"
+    primary: "#1e90ff"
   repo: https://github.com/mblue9/RNAseq-R_testing
