@@ -977,6 +977,13 @@ glMDPlot(fit.treat, coef=1, counts=v$E, groups=group2,
         folder="md")
 ```
 
+```{r include=FALSE}
+# copy files needed to display Glimma in book
+dir.create("../_book")
+file.copy('vignettes/mds', '_book', recursive=TRUE, overwrite =TRUE)
+file.copy('vignettes/md', '_book', recursive=TRUE, overwrite =TRUE)
+file.copy('vignettes/volcano', '_book', recursive=TRUE, overwrite =TRUE)
+```
 
 As with the volcano plot example above, this function creates an html page (./md/MD-Plot.html) that allows the user to search for their favourite gene.
 
