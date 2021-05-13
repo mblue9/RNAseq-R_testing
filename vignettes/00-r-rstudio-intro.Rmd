@@ -1,15 +1,3 @@
----
-title: "RNA-seq analysis in R"
-author: "Harriet Dashnow"
-date: "`r format(Sys.time(), '%d %B %Y')`"
-minutes: 40
-output: 
-  html_document:
-    toc: yes
-    toc_float: yes
-    toc_depth: 2
----
-
 # (PART) R for RNA-seq {.unnumbered}
 
 # Introduction

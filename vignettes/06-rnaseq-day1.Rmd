@@ -1,19 +1,5 @@
 ---
-title: "RNA-seq analysis in R"
-author: "Maria A Doyle, Harriet Dashnow, Jovana Maksimovic, Anna S Trigos, Shian Su, Charity W Law, Matthew E Ritchie, Belinda Phipson"
-date: "`r format(Sys.time(), '%d %B %Y')`"
-output: 
-  html_document:
-    toc: yes
-    toc_float: yes
-    toc_depth: 2
-minutes: 300
-layout: page
 bibliography: ref.bib
-resource_files:
-  - mds
-  - volcano
-  - md
 ---
 
 # (PART) RNA-seq analysis {.unnumbered}
@@ -1264,11 +1250,4 @@ The session information describes the versions of R and of the packages that wer
 sessionInfo()
 ```
 
-
-# Feedback
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpAKZSLFcbXXgi3dZ1owUKo9osN9E-dJEVUhx9QOV93skOiA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
-
-# References
 

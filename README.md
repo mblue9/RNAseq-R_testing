@@ -1,10 +1,13 @@
 ---
-knit: "bookdown::render_book"
-title: "RNAseq-R"
-author: "Maria Doyle..."
-github-repo: mblue9/RNAseq-R_testing
+knit: bookdown::render_book
 site: bookdown::bookdown_site
+title: "RNAseq-R"
+author: "Maria A Doyle, Harriet Dashnow, Jovana Maksimovic, Anna S Trigos, Shian Su, Charity W Law, Matthew E Ritchie, Belinda Phipson"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+github-repo: mblue9/RNAseq-R_testing
 documentclass: book
+bibliography: ref.bib
+link-citations: true
 ---
 
 # Introduction
